@@ -1,0 +1,28 @@
+<p>
+  user-show works!
+</p>
+
+<form (ngSubmit)="findPets(search)">
+  <label for="breed">breed:</label>
+  <input name="breed" [(ngModel)]="search.breed">
+
+  <label for="location">location:</label>
+  <input name="location" [(ngModel)]="search.location">
+
+  <input type="submit" value="Search">
+</form>
+
+<div *ngIf="oneUser">
+	<h2>{{oneUser.first_name}}</h2>
+	<h3>{{oneUser.last_name}}</h3>
+	<h3>{{oneUser.city}}</h3>
+	<h3>{{oneUser.state}}</h3>
+  <h3>Pets: </h3>
+  <div *ngFor="let pet of oneUser.pets">
+    <div>
+      <h5>name: {{pet.name}}</h5>
+      <h5>breed: {{pet.breed}}</h5>
+      <img [src]="pet.image_url_small">
+    </div>
+  </div>
+</div>

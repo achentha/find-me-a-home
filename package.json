@@ -1,19 +1,8 @@
 {
-  "name": "find-me-a-home",
-  "version": "1.0.0",
-  "description": "An app that helps you search for a pet to adopt from shelters",
-  "main": "server.js",
+  "dependencies": {
+    "concurrently": "^3.5.0"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/achentha/find-me-a-home.git"
-  },
-  "author": "Apichai Chenthanakij",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/achentha/find-me-a-home/issues"
-  },
-  "homepage": "https://github.com/achentha/find-me-a-home#readme"
+    "start": "concurrently \"cd front-end && npm start\" \"cd back-end && npm start\""
+  }
 }

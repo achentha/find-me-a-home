@@ -1,0 +1,26 @@
+<h2>New User</h2>
+
+<form (ngSubmit)="saveUser(newUser)">
+  <label for="first_name">First Name:</label>
+  <input name="first_name" [(ngModel)]="newUser.first_name">
+
+  <label for="last_name">Last Name:</label>
+  <input name="last_name" [(ngModel)]="newUser.last_name">
+
+  <label for="email">email:</label>
+  <input name="email" [(ngModel)]="newUser.email">
+
+  <label for="city">City:</label>
+  <input name="city" [(ngModel)]="newUser.city">
+
+  <label for="state">State:</label>
+  <input name="state" [(ngModel)]="newUser.state">
+
+  <label for="user_name">User Name:</label>
+  <input name="user_name" [(ngModel)]="newUser.user_name">
+
+  <label for="password">Password:</label>
+  <input name="password" [(ngModel)]="newUser.password">
+
+  <input type="submit" value="Create">
+</form>

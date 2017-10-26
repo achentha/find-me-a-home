@@ -1,0 +1,26 @@
+<h2>Edit User</h2>
+
+<form (ngSubmit)="updateUser(updatedUser)">
+  <label for="first_name">First Name:</label>
+  <input name="first_name" [(ngModel)]="updatedUser.first_name">
+
+  <label for="last_name">Last Name:</label>
+  <input name="last_name" [(ngModel)]="updatedUser.last_name">
+
+  <label for="email">email:</label>
+  <input name="email" [(ngModel)]="updatedUser.email">
+
+  <label for="city">City:</label>
+  <input name="city" [(ngModel)]="updatedUser.city">
+
+  <label for="state">State:</label>
+  <input name="state" [(ngModel)]="updatedUser.state">
+
+  <label for="user_name">User Name:</label>
+  <input name="user_name" [(ngModel)]="updatedUser.user_name">
+
+  <label for="password">Password:</label>
+  <input name="password" [(ngModel)]="updatedUser.password">
+
+  <input type="submit" value="Update">
+</form>
