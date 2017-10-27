@@ -12,17 +12,39 @@ import { PetfinderService } from '../../search/petfinder.service';
 export class UserShowComponent implements OnInit {
 
 	oneUser = <any>{};
-  search = {breed: '', location: ''};
-  foundPets = [];
+  breedSearch = {};
+  pet_finder_api_id;
 
-  findPets(search) {
-    console.log(`search for breed ${search.breed}, at ${search.location}`)
-    this.petfinderService.getDogBreeds()
+  foundBreeds = [];
+  foundPetsOfBreed = [];
+  foundPet = {};
+
+
+  findBreeds() {
+    this.petfinderService.getPetBreeds()
       .subscribe(response => {
-        this.foundPets = response.json().petfinder.breeds.breed;
-          console.log(this.foundPets);
-        // this.foundPets = response.petfinder.breeds.breed.json();
+        this.foundBreeds = response.json().petfinder.breeds.breed;
+          console.log(this.foundBreeds);
       });
+  }
+
+  findPetsOfBreed(breedSearch) {
+    this.petfinderService.getPetsOfBreed(breedSearch)
+      .subscribe(response => {
+        this.foundPetsOfBreed = response.json().petfinder.pets.pet;
+        console.log(response.json());
+        this.breedSearch = {};
+
+      })
+  }
+
+  findPet(pet_finder_api_id) {
+    this.petfinderService.getPet(pet_finder_api_id)
+      .subscribe(response => {
+        this.foundPet = response.json().petfinder.pet;
+        console.log(this.foundPet);
+        this.pet_finder_api_id = '';
+      })
   }
 
   constructor(

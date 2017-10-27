@@ -1,16 +1,26 @@
-<p>
-  user-show works!
-</p>
+<button (click)="findBreeds()">Search Breeds</button>
 
-<form (ngSubmit)="findPets(search)">
+<form (ngSubmit)="findPetsOfBreed(breedSearch)">
   <label for="breed">breed:</label>
-  <input name="breed" [(ngModel)]="search.breed">
+  <input name="breed" [(ngModel)]="breedSearch.breed">
 
   <label for="location">location:</label>
-  <input name="location" [(ngModel)]="search.location">
+  <input name="location" [(ngModel)]="breedSearch.location">
 
   <input type="submit" value="Search">
 </form>
+
+<form (ngSubmit)="findPet(pet_finder_api_id)">
+  <label for="pet_finder_api_id">Pet id:</label>
+  <input name="pet_finder_api_id" [(ngModel)]="pet_finder_api_id">
+  <input type="submit" value="Search Pet">
+</form>
+
+<div *ngIf="foundPetsOfBreed">
+  <div *ngFor="let pet of foundPetsOfBreed">
+    Name: {{pet.name.$t}}, Id: {{pet.id.$t}}, Age: {{pet.age.$t}}, Sex: {{pet.sex.$t}}
+  </div>
+</div>
 
 <div *ngIf="oneUser">
 	<h2>{{oneUser.first_name}}</h2>

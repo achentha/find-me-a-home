@@ -30,7 +30,5 @@ import { CommentsComponent } from './comments/comments.component';
   ],
   providers: [],
   bootstrap: [AppComponent]
-  // bootstrap(AppComponent, [JSONP_PROVIDERS])
-
 })
 export class AppModule { }
