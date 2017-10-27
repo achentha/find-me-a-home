@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { UsersRoutingModule } from './users/user-routing.module';
 import { UsersModule } from './users/users.module';
-import { HttpModule } from '@angular/http';
+import { HttpModule ,JsonpModule } from '@angular/http';
 
 
 import { AppComponent } from './app.component';
@@ -26,8 +26,11 @@ import { CommentsComponent } from './comments/comments.component';
     HttpModule,
     UsersModule,
     UsersRoutingModule,
+    JsonpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
+  // bootstrap(AppComponent, [JSONP_PROVIDERS])
+
 })
 export class AppModule { }

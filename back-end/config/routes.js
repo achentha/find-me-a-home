@@ -7,6 +7,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 var controllers = require('../controllers');
 var router = express.Router();
 
+//petfinder api routes
+router.get('/petfinder/:breed_id/:location_id', controllers.petfinderapi.index);
+
+
 //comments routes
 router.get('/users/:user_id/pets/:pet_id/comments', controllers.comments.index);
 router.post('/users/:user_id/pets/:pet_id/comments', controllers.comments.create);

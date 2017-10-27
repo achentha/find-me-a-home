@@ -19,7 +19,8 @@ export class UserShowComponent implements OnInit {
     console.log(`search for breed ${search.breed}, at ${search.location}`)
     this.petfinderService.getDogBreeds()
       .subscribe(response => {
-        console.log(response.json());
+        this.foundPets = response.json().petfinder.breeds.breed;
+          console.log(this.foundPets);
         // this.foundPets = response.petfinder.breeds.breed.json();
       });
   }
