@@ -25,8 +25,12 @@ export class UsersService {
 		return this.http.post(`${this.baseUrl}/users/`, newUser);
 	}
 
+	createUser(newUser) {
+		return this.http.post(`${this.baseUrl}/signup`, newUser);
+	}
+
 	updateUser(updatedUser) {
-		return this.http.put(`${this.baseUrl}/users/${updatedUser._id}`, updatedUser);		
+		return this.http.put(`${this.baseUrl}/users/${updatedUser._id}`, updatedUser);
 	}
 
   constructor(private http: Http) { }
