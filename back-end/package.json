@@ -4,6 +4,7 @@
   "description": "An app that helps you search for a pet to adopt from shelters",
   "main": "server.js",
   "scripts": {
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

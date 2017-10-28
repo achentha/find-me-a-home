@@ -8,8 +8,8 @@ export class PetfinderService {
   baseUrl = 'http://api.petfinder.com';
   key = 'd207a8d97b0beecac3fcc231eee212a0';  //petfinder key
 
-  getPetBreeds() {
-    var url = `${this.baseUrl}/breed.list?key=${this.key}&animal=dog&callback=JSONP_CALLBACK&format=json`;
+  getPetBreeds(pet_type) {
+    var url = `${this.baseUrl}/breed.list?key=${this.key}&animal=${pet_type}&callback=JSONP_CALLBACK&format=json`;
 
 
     return this.jsonp.get(url)

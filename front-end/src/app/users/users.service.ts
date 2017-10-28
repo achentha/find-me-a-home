@@ -25,8 +25,12 @@ export class UsersService {
 		return this.http.post(`${this.baseUrl}/users/`, newUser);
 	}
 
-	createUser(newUser) {
+	signupUser(newUser) {
 		return this.http.post(`${this.baseUrl}/signup`, newUser);
+	}
+
+	loginUser(user) {
+		return this.http.post(`${this.baseUrl}/login`, user);
 	}
 
 	updateUser(updatedUser) {

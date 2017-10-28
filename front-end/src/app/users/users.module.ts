@@ -9,13 +9,14 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserShowComponent } from './user-show/user-show.component';
 import { UsersService } from './users.service';
 import { PetfinderService } from '../search/petfinder.service';
+import { UserLoginComponent } from './user-login/user-login.component';
 @NgModule({
   imports: [
     CommonModule,
     RouterModule,
     FormsModule
   ],
-  declarations: [UserIndexComponent, UsersComponent, UserNewComponent, UserEditComponent, UserShowComponent],
+  declarations: [UserIndexComponent, UsersComponent, UserNewComponent, UserEditComponent, UserShowComponent, UserLoginComponent],
   providers: [
     UsersService,
     PetfinderService,

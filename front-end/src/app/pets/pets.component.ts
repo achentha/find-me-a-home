@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { PetsService } from './pets.service';
+import { PetfinderService } from '../search/petfinder.service';
 
 @Component({
   selector: 'app-pets',
@@ -8,14 +8,15 @@ import { PetsService } from './pets.service';
 })
 export class PetsComponent implements OnInit {
 
-  allDogBreeds = [];
-  constructor(private petsService: PetsService) { }
+  pet_type = '';
+  allPetBreeds = [];
+  constructor(private petfinderService: PetfinderService) { }
 
   ngOnInit() {
-    this.petsService.getDogBreeds()
+    this.petfinderService.getPetBreeds(this.pet_type)
       .subscribe(response => {
         console.log(response.json());
-        this.allDogBreeds = response.json()
+        this.allPetBreeds = response.json()
       });
   }
 

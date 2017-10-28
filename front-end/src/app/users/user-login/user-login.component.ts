@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
 
 @Component({
-  selector: 'app-user-new',
-  templateUrl: './user-new.component.html',
-  styleUrls: ['./user-new.component.css']
+  selector: 'app-user-login',
+  templateUrl: './user-login.component.html',
+  styleUrls: ['./user-login.component.css']
 })
 
-export class UserNewComponent implements OnInit {
+export class UserLoginComponent implements OnInit {
 
-	newUser = <any>{};
+	login_user = <any>{};
 
   constructor(
   	private usersService : UsersService
@@ -30,10 +30,9 @@ export class UserNewComponent implements OnInit {
 	// 	});
   // }
 
-  createUser(newUser) {
-    console.log("create user");
-    console.log(newUser);
-    this.usersService.signupUser(newUser)
+  loginUser(login_user) {
+    console.log(`loginUser() ${login_user}`);
+    this.usersService.loginUser(login_user)
         .subscribe(response => {
       console.log(response.json());
       let user = response.json();

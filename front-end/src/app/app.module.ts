@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
-import { UsersRoutingModule } from './users/user-routing.module';
+import { UserRoutingModule } from './users/user-routing.module';
+// import { PetRoutingModule } from './pets/pet-routing.module';
 import { UsersModule } from './users/users.module';
 import { HttpModule ,JsonpModule } from '@angular/http';
 
@@ -25,7 +26,8 @@ import { CommentsComponent } from './comments/comments.component';
     AppRoutingModule,
     HttpModule,
     UsersModule,
-    UsersRoutingModule,
+    UserRoutingModule,
+    // PetRoutingModule,
     JsonpModule,
   ],
   providers: [],

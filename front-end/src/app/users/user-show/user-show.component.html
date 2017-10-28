@@ -1,4 +1,8 @@
-<button (click)="findBreeds()">Search Breeds</button>
+<form (ngSubmit)="findBreeds(pet_type)">
+  <label for="pet_type">Pet Type:</label>
+  <input name="pet_type" [(ngModel)]="pet_type">
+  <input type="submit" value="Search Breeds">
+</form>
 
 <form (ngSubmit)="findPetsOfBreed(breedSearch)">
   <label for="breed">breed:</label>
@@ -23,10 +27,11 @@
 </div>
 
 <div *ngIf="oneUser">
-	<h2>{{oneUser.first_name}}</h2>
-	<h3>{{oneUser.last_name}}</h3>
-	<h3>{{oneUser.city}}</h3>
-	<h3>{{oneUser.state}}</h3>
+	<h2>{{oneUser.first_name}} {{oneUser.last_name}}</h2>
+	<h3>{{oneUser.city}}, {{oneUser.state}}</h3>
+  <p>id: {{oneUser._id}}</p>
+  <a routerLink="/users/edit/{{oneUser._id}}">Edit Profile</a>
+
   <h3>Pets: </h3>
   <div *ngFor="let pet of oneUser.pets">
     <div>
@@ -35,4 +40,10 @@
       <img [src]="pet.image_url_small">
     </div>
   </div>
+  <!-- <div *ngIf="foundPet">
+    <h5>name: {{foundPet.name.$t}}</h5>
+    <h5>sex: {{foundPet.sex.$t}}</h5>
+    <h5>contact: {{foundPet.contact.phone.$t}}</h5>
+    <img ng-src="foundPet.media.photo[@size] == x"/>
+  </div> -->
 </div>

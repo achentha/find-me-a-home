@@ -7,7 +7,7 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserShowComponent } from './user-show/user-show.component';
 import { PetfinderService } from '../search/petfinder.service';
 
-const aboutRoutes: Routes = [
+const userRoutes: Routes = [
     {
         path: 'users',
         component: UsersComponent,
@@ -34,10 +34,10 @@ const aboutRoutes: Routes = [
 
 @NgModule({
     imports: [
-        RouterModule.forChild(aboutRoutes)
+        RouterModule.forChild(userRoutes)
     ],
     exports: [
         RouterModule
     ]
 })
-export class UsersRoutingModule { }
+export class UserRoutingModule { }
