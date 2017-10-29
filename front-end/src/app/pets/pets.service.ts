@@ -23,8 +23,8 @@ export class PetsService {
 
 
 	deleteOneUserPet(user, pet) {
-    console.log(`deleteOneUserPet for user id ${user._id} pet id ${pet._id}`);
-		return this.http.delete(`${this.baseUrl}/users/${user._id}/pets/${pet._id}`);
+    console.log(`deleteOneUserPet for user id ${user._id} pet id ${pet.pet_id}`);
+		return this.http.delete(`${this.baseUrl}/users/${user._id}/pets/${pet.pet_id}`);
 	}
 
 	saveOneUserPet(user, pet) {

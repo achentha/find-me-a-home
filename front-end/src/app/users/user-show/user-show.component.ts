@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute }   from '@angular/router';
 import { UsersService } from '../users.service';
+import { PetsService } from '../../pets/pets.service';
 import { PetfinderService } from '../../search/petfinder.service';
 
 @Component({
@@ -56,9 +57,44 @@ export class UserShowComponent implements OnInit {
       })
   }
 
+  getPets() {
+    console.log('showAllUserPets');
+    this.petsService.getAllUserPets(this.oneUser)
+    .subscribe(response => {
+			console.log(response.json());
+			this.oneUser.pets = response.json();
+    });
+  }
+
+  addPet(pet) {
+    console.log(`pet name: ${pet.name.$t}, breed: ${pet.breeds.breed.$t}, apiId: ${pet.id.$t}`)
+    let newPet = {
+      "name" : pet.name.$t,
+      "breed" : pet.breeds.breed.$t,
+      "pet_finder_api_id" : pet.id.$t,
+    }
+
+    console.log(`newPet: ${newPet.name}, ${newPet.breed}, ${newPet.pet_finder_api_id}`);
+    this.petsService.createOneUserPet(this.oneUser, newPet)
+    .subscribe(res => {
+      console.log(`response ${res}`);
+      this.getPets();
+    });
+  }
+
+  deletePet(pet) {
+    this.petsService.deleteOneUserPet(this.oneUser,
+      {"pet_id": pet._id})
+      .subscribe(res => {
+        console.log(`response: ${res}`);
+        this.getPets();
+      });
+  }
+
   constructor(
-  	private route : ActivatedRoute,
-  	private usersService : UsersService,
+  	private route: ActivatedRoute,
+  	private usersService: UsersService,
+    private petsService: PetsService,
     private petfinderService: PetfinderService,
   ) { }
 

@@ -1,3 +1,7 @@
+<p>
+  user-show works!
+</p>
+
 <form (ngSubmit)="findBreeds(pet_type)">
   <label for="pet_type">Pet Type:</label>
   <input name="pet_type" [(ngModel)]="pet_type">
@@ -20,10 +24,23 @@
   <input type="submit" value="Search Pet">
 </form>
 
-<div *ngIf="foundPetsOfBreed">
-  <div *ngFor="let pet of foundPetsOfBreed">
-    Name: {{pet.name.$t}}, Id: {{pet.id.$t}}, Age: {{pet.age.$t}}, Sex: {{pet.sex.$t}}
-  </div>
+<button (click)='getPets()'>Show all my pets</button>
+
+<h3>Found Breeds:</h3>
+<div *ngFor="let breed of foundBreeds">
+  &nbsp;&nbsp;&nbsp;&nbsp;{{breed.$t}}
+</div>
+
+<h3>Found Pets of Breed: {{breedSearch.breed}}</h3>
+<div *ngFor="let pet of foundPetsOfBreed">
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;Name: {{pet.name.$t}},
+    &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.breeds.breed.$t}},
+    &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.age.$t}},
+    &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.sex.$t}},</p>
+    <!-- &nbsp;&nbsp;&nbsp;&nbsp;photo: {{pet.media.photos.photo['@size':'fpm']}}</p> -->
+  <button (click)='addPet(pet)'>Add to My List</button>
+
+  <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.description.$t}}</p>
 </div>
 
 <div *ngIf="oneUser">
@@ -31,15 +48,19 @@
 	<h3>{{oneUser.city}}, {{oneUser.state}}</h3>
   <p>id: {{oneUser._id}}</p>
   <a routerLink="/users/edit/{{oneUser._id}}">Edit Profile</a>
+  <a routerLink="/users/{{oneUser._id}}/pets">Show My Pet list</a>
 
   <h3>Pets: </h3>
   <div *ngFor="let pet of oneUser.pets">
     <div>
-      <h5>name: {{pet.name}}</h5>
-      <h5>breed: {{pet.breed}}</h5>
+      <h5>name: {{pet.name}}&nbsp;&nbsp;&nbsp;&nbsp;
+          breed: {{pet.breed}}
+      <button (click)='deletePet(pet)'>Delete</button></h5>
       <img [src]="pet.image_url_small">
     </div>
   </div>
+
+  <!-- <app-pet-index></app-pet-index> -->
   <!-- <div *ngIf="foundPet">
     <h5>name: {{foundPet.name.$t}}</h5>
     <h5>sex: {{foundPet.sex.$t}}</h5>

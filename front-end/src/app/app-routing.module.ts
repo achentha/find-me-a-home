@@ -25,10 +25,10 @@ const routes: Routes = [
         path: 'signup',
         component: UserNewComponent
     },
-    {
-        path: 'pets',
-        component: PetsComponent
-    },
+    // {
+    //     path: 'pets',
+    //     component: PetsComponent
+    // },
 ];
 
 @NgModule({

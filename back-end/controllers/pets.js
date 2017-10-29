@@ -27,7 +27,9 @@ function show(req, res) {
 function create(req, res) {
   User.findById(req.params.user_id, function(err, user) {
     if (err) {res.sendStatus(404); return;}
+    console.log(`req.body: name ${req.body.name}, breed ${req.body.breed}, api id ${req.body.pet_finder_api_id}`);
     let newPet = new Pet(req.body);
+    console.log(`newPet: ${newPet}`);
     user.pets.push(newPet);
     user.save(function(err, savedUser) {
       if (err) {res.sendStatus(404); return;}
