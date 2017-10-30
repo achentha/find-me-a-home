@@ -6,9 +6,9 @@ export class PetsService {
 
 	baseUrl = 'http://localhost:3000';
 
-	getAllUserPets(user) {
-    console.log(`getAllUserPets for user id ${user._id}`);
-		return this.http.get(`${this.baseUrl}/users/${user._id}/pets`);
+	getAllUserPets(userId) {
+    console.log(`getAllUserPets for user id ${userId}`);
+		return this.http.get(`${this.baseUrl}/users/${userId}/pets`);
 	}
 
 	getOneUserPet(user, pet) {
@@ -21,10 +21,14 @@ export class PetsService {
     return this.http.post(`${this.baseUrl}/users/${user._id}/pets`, newPet);
   }
 
-
 	deleteOneUserPet(user, pet) {
-    console.log(`deleteOneUserPet for user id ${user._id} pet id ${pet.pet_id}`);
-		return this.http.delete(`${this.baseUrl}/users/${user._id}/pets/${pet.pet_id}`);
+    console.log(`deleteOneUserPet for user id ${user._id} pet id ${pet._id}`);
+		return this.http.delete(`${this.baseUrl}/users/${user._id}/pets/${pet._id}`);
+	}
+
+	deletePetViaApiId(user, petApi) {
+		console.log(`deletePetViaApiId for user id ${user._id} pet api id ${petApi.id.$t}`);
+		return this.http.delete(`${this.baseUrl}/users/${user._id}/pets/petfinderapi/${petApi.id.$t}`);
 	}
 
 	saveOneUserPet(user, pet) {
