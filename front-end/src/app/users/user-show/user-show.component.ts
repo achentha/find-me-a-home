@@ -20,11 +20,13 @@ export class UserShowComponent implements OnInit {
   foundBreeds = [];
   foundPetsOfBreed = [];
   foundPet = {};
+  foundUserPetList = [];
 
   clearSearchFound() {
     this.foundBreeds = [];
     this.foundPetsOfBreed = [];
     this.foundPet = {};
+    this.foundUserPetList = [];
   }
 
   findBreeds(pet_type) {
@@ -58,11 +60,29 @@ export class UserShowComponent implements OnInit {
   }
 
   getPets() {
-    console.log('showAllUserPets');
-    this.petsService.getAllUserPets(this.oneUser)
+    console.log(`getPets() for user: ${this.oneUser.first_name} ${this.oneUser.last_name}, id: ${this.oneUser._id}`);
+    this.clearSearchFound();
+
+    //update all user pets from backend db
+    this.petsService.getAllUserPets(this.oneUser._id)
     .subscribe(response => {
 			console.log(response.json());
 			this.oneUser.pets = response.json();
+
+      //query petfinder api for each pet
+      this.oneUser.pets.forEach((pet) => {
+        console.log(`pet id: ${pet._id}, pet apiId: ${pet.pet_finder_api_id}`);
+
+        this.petfinderService.getPet(pet.pet_finder_api_id)
+          .subscribe(response => {
+            this.foundPet = response.json().petfinder.pet;
+            this.foundUserPetList.push(this.foundPet);
+
+            this.foundUserPetList.forEach(pet => {
+              console.log(`${pet.name.$t} ${pet.id.$t}`);
+            });
+          });
+      });
     });
   }
 
@@ -83,12 +103,19 @@ export class UserShowComponent implements OnInit {
   }
 
   deletePet(pet) {
-    this.petsService.deleteOneUserPet(this.oneUser,
-      {"pet_id": pet._id})
+    this.petsService.deleteOneUserPet(this.oneUser, pet)
       .subscribe(res => {
         console.log(`response: ${res}`);
         this.getPets();
       });
+  }
+
+  deletePetViaApiId(petApi) {
+    this.petsService.deletePetViaApiId(this.oneUser, petApi)
+      .subscribe(res => {
+        console.log(`response: ${res}`);
+        this.getPets();
+      })
   }
 
   constructor(

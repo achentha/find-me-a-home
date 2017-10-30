@@ -1,0 +1,28 @@
+/** {
+  border: 1px solid black;
+}*/
+
+h2 {
+  height: 20px;
+  line-height: 20px;
+}
+.user-nav {
+  font-size: 15px;
+  font-weight:normal;
+  text-decoration: none;
+  margin-left: 15px;
+  margin-right: 5px;
+  float: right;
+  height: 20px;
+  line-height: 20px;
+}
+
+.add-pet .delete-pet{
+  float: right;
+}
+
+.pet-display {
+  border-radius: 5px;
+  border: 2px transparent;
+
+}

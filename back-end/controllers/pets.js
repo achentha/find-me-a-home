@@ -62,6 +62,7 @@ function update(req, res) {
 function destroy(req, res) {
   User.findById(req.params.user_id, function(err, user) {
     if (err) {res.sendStatus(404); return;}
+    console.log(`pet destroy(): user id ${user._id}, req.params ${req.params}`);
     user.pets.id(req.params.pet_id)
       .remove(function(err, removedPet) {
       if (err) {res.sendStatus(404); return;}
@@ -73,8 +74,27 @@ function destroy(req, res) {
   });
 }
 
+function destroyByApiId(req, res) {
+  User.findById(req.params.user_id, function(err, user) {
+    if (err) {res.sendStatus(404); return;}
+    console.log(`pet destroyByApiId(): user id ${user._id}, req.params.pet_api_id ${req.params.pet_api_id}`);
+    // let selectedPet = user.pets.find(pet => {
+    //   return pet.pet_finder_api_id == req.params.pet_api_id;
+    // });
+    // console.log(`pet to be deleted by api id: pet._id ${selectedPet._id}, pet name ${selectedPet.name}`);
+    user.pets = user.pets.filter(pet => {
+      return pet.pet_finder_api_id != req.params.pet_api_id;
+    });
+    user.save(function(err, savedUser) {
+      if (err) {res.sendStatus(404); return;}
+      res.json(savedUser);
+    });
+  })
+}
+
 module.exports.index = index;
 module.exports.show = show;
 module.exports.create = create;
 module.exports.update = update;
 module.exports.destroy = destroy;
+module.exports.destroyByApiId = destroyByApiId;
