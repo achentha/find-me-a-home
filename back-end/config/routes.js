@@ -85,6 +85,7 @@ module.exports = function(app, passport) {
     app.get('/users/:user_id/pets/:pet_id', controllers.pets.show);
     app.put('/users/:user_id/pets/:pet_id', controllers.pets.update);
     app.delete('/users/:user_id/pets/:pet_id', controllers.pets.destroy);
+    app.get('/users/:user_id/pets/petfinderapi/:pet_api_id', controllers.pets.findByApiId);
     app.delete('/users/:user_id/pets/petfinderapi/:pet_api_id', controllers.pets.destroyByApiId);
 
 

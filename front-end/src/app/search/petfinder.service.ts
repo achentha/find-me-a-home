@@ -8,6 +8,8 @@ export class PetfinderService {
   baseUrl = 'http://api.petfinder.com';
   key = 'd207a8d97b0beecac3fcc231eee212a0';  //petfinder key
 
+  apiPets = [];  //local cached for later access
+
   getPetBreeds(pet_type) {
     var url = `${this.baseUrl}/breed.list?key=${this.key}&animal=${pet_type}&callback=JSONP_CALLBACK&format=json`;
 
@@ -23,16 +25,32 @@ export class PetfinderService {
 
     return this.jsonp.get(url)
              .map(function(res: Response) {return res;})
+            //  .subscribe(function(res){this.apiPets = res;})
              .catch(function(error: any) {return Observable.throw(error);});
+
+    // let req = this.jsonp.get(url);
+    // req.map(function(res: Response) {return res;})
+    //    .catch(function(error: any) {return Observable.throw(error);});
+    //
+    // req.subscribe(function(res) {this.apiPets = res;});
+    // return req;
   }
 
   getPet(pet_finder_api_id) {
     var url = `${this.baseUrl}/pet.get?key=${this.key}&id=${pet_finder_api_id}&format=json&callback=JSONP_CALLBACK`;
-
+    console.log(`petfinder.service.getPet(): api id ${pet_finder_api_id}`);
     return this.jsonp.get(url)
              .map(function(res: Response) {return res;})
+            //  .subscribe(function(res) {this.apiPets.push(res);})
              .catch(function(error: any) {return Observable.throw(error);
              });
+
+    // let req = this.jsonp.get(url);
+    // req.map(function(res: Response) {return res;})
+    //    .catch(function(error: any) {return Observable.throw(error);});
+    //
+    // req.subscribe((res) => {this.apiPets.push(res);});
+    // return req;
   }
 
   constructor(private http: Http,

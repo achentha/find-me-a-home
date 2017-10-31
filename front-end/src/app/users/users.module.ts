@@ -11,7 +11,6 @@ import { UsersService } from './users.service';
 import { PetsService } from '../pets/pets.service';
 import { PetfinderService } from '../search/petfinder.service';
 import { UserLoginComponent } from './user-login/user-login.component';
-import { PetIndexComponent } from '../pets/pet-index/pet-index.component';
 @NgModule({
   imports: [
     CommonModule,
@@ -25,7 +24,6 @@ import { PetIndexComponent } from '../pets/pet-index/pet-index.component';
     UserEditComponent,
     UserShowComponent,
     UserLoginComponent,
-    PetIndexComponent,
   ],
   providers: [
     UsersService,

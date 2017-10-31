@@ -1,3 +1,40 @@
 <p>
   pet-show works!
 </p>
+
+
+    <div *ngIf="apiPet.header.status.code.$t == 100">
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Name: {{apiPet.pet.name.$t}},
+        &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{apiPet.pet.breeds.breed.$t}},
+        &nbsp;&nbsp;&nbsp;&nbsp;Age: {{apiPet.pet.age.$t}},
+        &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{apiPet.pet.sex.$t}},
+        &nbsp;&nbsp;&nbsp;&nbsp;Last Updated: {{apiPet.pet.lastUpdate.$t}}</p>
+
+        <p *ngIf="apiPet.pet.options.option.length">
+          <span *ngFor="let opt of apiPet.pet.options.option">
+            &nbsp;&nbsp;&nbsp;&nbsp;{{opt.$t}}</span>
+        </p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;Contact Phone: {{apiPet.pet.contact.phone.$t}},
+           email: {{apiPet.pet.contact.email.$t}},
+           &nbsp;&nbsp;city: {{apiPet.pet.contact.city.$t}},
+           &nbsp;&nbsp;state: {{apiPet.pet.contact.state.$t}},
+           &nbsp;&nbsp;zip: {{apiPet.pet.contact.zip.$t}}</p>
+
+      <div *ngFor="let photo of apiPet.pet.media.photos.photo">
+        <div *ngIf="photo['@size'] === 'x'">
+          <img src="{{photo.$t}}" alt="">
+        </div>
+      </div>
+
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{apiPet.pet.description.$t}}</p>
+      <!-- <span *ngIf="backendPet == '{}'" class="add-pet"><button (click)='addPet(apiPet.pet)'>Add To My List</button></span>
+      <span *ngIf="backendPet != '{}'" class="delete-pet"><button (click)='deletePet(apiPet.pet)'>Delete</button></span> -->
+
+      <span class="add-pet"><button (click)='addPet(apiPet.pet)'>Add To My List</button></span>
+      <span class="delete-pet"><button (click)='deletePet(apiPet.pet)'>Delete</button></span>
+    </div>
+
+    <div *ngIf="apiPet.header.status.code.$t == 201">
+      <p>&nbsp;&nbsp;&nbsp;&nbsp;Name: {{apiPet.name}} is no longer available.
+        <span class="delete-pet"><button (click)='deleteOneUserPet(apiPet)'>Delete</button></span></p>
+    </div>

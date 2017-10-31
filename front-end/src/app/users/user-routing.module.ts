@@ -7,6 +7,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
 import { UserShowComponent } from './user-show/user-show.component';
 import { PetfinderService } from '../search/petfinder.service';
 import { PetIndexComponent } from '../pets/pet-index/pet-index.component';
+import { PetShowComponent } from '../pets/pet-show/pet-show.component';
+import { PetEditComponent } from '../pets/pet-edit/pet-edit.component';
 
 const userRoutes: Routes = [
     {
@@ -31,7 +33,16 @@ const userRoutes: Routes = [
             },
             {
                 path: ':id/pets',
-                component: PetIndexComponent
+                component: PetIndexComponent,
+                // as: 'showUserPets'
+            },
+            {
+                path: ':id/pets/:pet_api_id',
+                component: PetShowComponent
+            },
+            {
+                path: ':id/pets/edit/:pet_id',
+                component: PetEditComponent
             },
         ]
     }

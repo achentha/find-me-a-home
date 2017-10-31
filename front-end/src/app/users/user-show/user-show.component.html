@@ -76,12 +76,18 @@
     &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.age.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.sex.$t}}
     <span class="add-pet"><button (click)='addPet(pet)'>Add to My List</button></span>
-    <span class="add-pet"><button (click)='addPet(pet)'>See More</button></span></p>
-  <span *ngFor="let photo of pet.media.photos.photo">
-    <span *ngIf="photo['@size'] === 'fpm'">
-      <img src="{{photo.$t}}" alt="">
-    </span>
-  </span>
+
+		<a routerLink="/users/{{oneUser._id}}/pets/{{pet.id.$t}}"><button>See More</button></a>
+
+    <!-- <span class="show-pet"><button (click)='showPetDetail(pet)'>See More</button></span></p> -->
+
+  <div>
+	  <span *ngFor="let photo of pet.media.photos.photo">
+	    <span *ngIf="photo['@size'] === 'fpm'">
+	      <img src="{{photo.$t}}" alt="">
+	    </span>
+	  </span>
+	</div>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.description.$t}}</p>
 </div>
 
@@ -100,3 +106,5 @@
   </span>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.description.$t}}</p>
 </div>
+
+<router-outlet></router-outlet>

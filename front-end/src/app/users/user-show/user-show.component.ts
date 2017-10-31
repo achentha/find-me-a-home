@@ -95,7 +95,7 @@ export class UserShowComponent implements OnInit {
     }
 
     console.log(`newPet: ${newPet.name}, ${newPet.breed}, ${newPet.pet_finder_api_id}`);
-    this.petsService.createOneUserPet(this.oneUser, newPet)
+    this.petsService.createOneUserPet(this.oneUser._id, newPet)
     .subscribe(res => {
       console.log(`response ${res}`);
       this.getPets();
@@ -110,8 +110,8 @@ export class UserShowComponent implements OnInit {
       });
   }
 
-  deletePetViaApiId(petApi) {
-    this.petsService.deletePetViaApiId(this.oneUser, petApi)
+  deletePetViaApiId(apiPet) {
+    this.petsService.deletePetViaApiId(this.oneUser._id, apiPet)
       .subscribe(res => {
         console.log(`response: ${res}`);
         this.getPets();
