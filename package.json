@@ -3,7 +3,7 @@
     "concurrently": "^3.5.0"
   },
   "scripts": {
-    "start": "concurrently \"cd front-end && npm start\" \"cd back-end && npm start\"",
-    "postinstall": "concurrently \"cd front-end && npm install\" \"cd back-end && npm install\""
-  }
+    "deploy": "cd front-end && ng build --aot -prod -op ../back-end/dist && cd ..",
+    "start": "node back-end/server.js"
+  },
 }
