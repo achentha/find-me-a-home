@@ -39,14 +39,17 @@ function show(req, res) {
 }
 
 function create(req, res) {
+  console.log(`comment create(): req.body`, req.body)
   User.findById(req.params.user_id, function(err, user) {
     if (err) {res.sendStatus(404); return;}
     let pet = user.pets.id(req.params.pet_id);
     if (pet) {
       let newComment = new Comment(req.body);
+      console.log(`before pet.comments.push(): newComment ${newComment}`);
       pet.comments.push(newComment);
       user.save(function(err, savedUser) {
         if (err) {res.sendStatus(404); return;}
+        console.log(`after user.save(): newComment ${newComment}`);
         res.json(newComment);
       });
     }

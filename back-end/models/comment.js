@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 var CommentSchema = new Schema({
-	content: String,
+	comment: String,
 });
 
 var Comment = mongoose.model('Comment', CommentSchema);

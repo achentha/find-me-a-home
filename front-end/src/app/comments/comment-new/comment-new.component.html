@@ -1,0 +1,9 @@
+<p>
+  comment-new works!
+</p>
+
+<form (ngSubmit)="createComment()">
+  <label for="comment">Comment:</label>
+  <input type="text" name="comment" [(ngModel)]="newComment">
+  <input type="submit" value="Create Comment">
+</form>

@@ -11,9 +11,9 @@ export class PetsService {
 		return this.http.get(`${this.baseUrl}/users/${userId}/pets`);
 	}
 
-	getOneUserPet(user, pet) {
-		console.log(`getOneUserPet for user id ${user._id} pet id ${pet._id}`);
-		return this.http.get(`${this.baseUrl}/users/${user._id}/pets/${pet._id}`);
+	getOneUserPet(userId, petId) {
+		console.log(`getOneUserPet for user id ${userId} pet id ${petId}`);
+		return this.http.get(`${this.baseUrl}/users/${userId}/pets/${petId}`);
 	}
 
   createOneUserPet(userId, newPet) {
@@ -32,6 +32,7 @@ export class PetsService {
 	}
 
   findPetViaApiId(userId, apiPet) {
+		console.log("apiPet is", apiPet)
 		console.log(`findPetViaApiId() for user id ${userId} pet api id ${apiPet.id.$t}`)
 		return this.http.get(`${this.baseUrl}/users/${userId}/pets/petfinderapi/${apiPet.id.$t}`);
 	}

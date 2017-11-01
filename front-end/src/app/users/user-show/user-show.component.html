@@ -61,7 +61,7 @@
   <input name="pet_finder_api_id" [(ngModel)]="pet_finder_api_id">
 </form>
 
-<button (click)='getPets()'>Show all my pets</button>
+<!-- <button (click)='getPets()'>Show all my pets</button> -->
 
 <h3 *ngIf="foundBreeds && foundBreeds.length">Found Breeds:</h3>
 <div *ngFor="let breed of foundBreeds">
@@ -81,17 +81,18 @@
 
     <!-- <span class="show-pet"><button (click)='showPetDetail(pet)'>See More</button></span></p> -->
 
-  <div>
+  <div *ngIf="pet && pet.media && pet.media.photos && pet.media.photos.photo && pet.media.photos.photo.length">
 	  <span *ngFor="let photo of pet.media.photos.photo">
 	    <span *ngIf="photo['@size'] === 'fpm'">
 	      <img src="{{photo.$t}}" alt="">
 	    </span>
 	  </span>
 	</div>
+
   <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.description.$t}}</p>
 </div>
 
-<h3 class="pet-display" *ngIf="foundUserPetList.length">
+<!-- <h3 class="pet-display" *ngIf="foundUserPetList.length">
   My Pet List</h3>
 <div *ngFor="let pet of foundUserPetList">
   <p>&nbsp;&nbsp;&nbsp;&nbsp;Name: {{pet.name.$t}},
@@ -105,6 +106,6 @@
     </span>
   </span>
   <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.description.$t}}</p>
-</div>
+</div> -->
 
 <router-outlet></router-outlet>

@@ -59,32 +59,32 @@ export class UserShowComponent implements OnInit {
       })
   }
 
-  getPets() {
-    console.log(`getPets() for user: ${this.oneUser.first_name} ${this.oneUser.last_name}, id: ${this.oneUser._id}`);
-    this.clearSearchFound();
-
-    //update all user pets from backend db
-    this.petsService.getAllUserPets(this.oneUser._id)
-    .subscribe(response => {
-			console.log(response.json());
-			this.oneUser.pets = response.json();
-
-      //query petfinder api for each pet
-      this.oneUser.pets.forEach((pet) => {
-        console.log(`pet id: ${pet._id}, pet apiId: ${pet.pet_finder_api_id}`);
-
-        this.petfinderService.getPet(pet.pet_finder_api_id)
-          .subscribe(response => {
-            this.foundPet = response.json().petfinder.pet;
-            this.foundUserPetList.push(this.foundPet);
-
-            this.foundUserPetList.forEach(pet => {
-              console.log(`${pet.name.$t} ${pet.id.$t}`);
-            });
-          });
-      });
-    });
-  }
+  // getPets() {
+  //   console.log(`getPets() for user: ${this.oneUser.first_name} ${this.oneUser.last_name}, id: ${this.oneUser._id}`);
+  //   this.clearSearchFound();
+  //
+  //   //update all user pets from backend db
+  //   this.petsService.getAllUserPets(this.oneUser._id)
+  //   .subscribe(response => {
+	// 		console.log(response.json());
+	// 		this.oneUser.pets = response.json();
+  //
+  //     //query petfinder api for each pet
+  //     this.oneUser.pets.forEach((pet) => {
+  //       console.log(`pet id: ${pet._id}, pet apiId: ${pet.pet_finder_api_id}`);
+  //
+  //       this.petfinderService.getPet(pet.pet_finder_api_id)
+  //         .subscribe(response => {
+  //           this.foundPet = response.json().petfinder.pet;
+  //           this.foundUserPetList.push(this.foundPet);
+  //
+  //           this.foundUserPetList.forEach(pet => {
+  //             console.log(`${pet.name.$t} ${pet.id.$t}`);
+  //           });
+  //         });
+  //     });
+  //   });
+  // }
 
   addPet(pet) {
     console.log(`pet name: ${pet.name.$t}, breed: ${pet.breeds.breed.$t}, apiId: ${pet.id.$t}`)
@@ -98,7 +98,7 @@ export class UserShowComponent implements OnInit {
     this.petsService.createOneUserPet(this.oneUser._id, newPet)
     .subscribe(res => {
       console.log(`response ${res}`);
-      this.getPets();
+      // this.getPets();
     });
   }
 
@@ -106,7 +106,7 @@ export class UserShowComponent implements OnInit {
     this.petsService.deleteOneUserPet(this.oneUser, pet)
       .subscribe(res => {
         console.log(`response: ${res}`);
-        this.getPets();
+        // this.getPets();
       });
   }
 
@@ -114,7 +114,7 @@ export class UserShowComponent implements OnInit {
     this.petsService.deletePetViaApiId(this.oneUser._id, apiPet)
       .subscribe(res => {
         console.log(`response: ${res}`);
-        this.getPets();
+        // this.getPets();
       })
   }
 
