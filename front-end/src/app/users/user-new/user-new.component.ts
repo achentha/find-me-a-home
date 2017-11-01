@@ -19,17 +19,6 @@ export class UserNewComponent implements OnInit {
 
   }
 
-  // saveUser(newUser) {
-  // 	console.log("saving user");
-  // 	console.log(newUser);
-  // 	this.usersService.saveUser(newUser)
-  // 			.subscribe(response => {
-	// 		console.log(response.json());
-	// 		let user = response.json();
-	// 		window.location.href = "/users/" + user._id;
-	// 	});
-  // }
-
   createUser(newUser) {
     console.log("create user");
     console.log(newUser);

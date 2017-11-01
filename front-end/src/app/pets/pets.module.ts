@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { PetsComponent } from './pets.component';
 import { PetIndexComponent } from './pet-index/pet-index.component';
-import { PetNewComponent } from './pet-new/pet-new.component';
-import { PetEditComponent } from './pet-edit/pet-edit.component';
 import { PetShowComponent } from './pet-show/pet-show.component';
 import { PetsService } from './pets.service';
 import { PetfinderService } from '../search/petfinder.service';
@@ -17,8 +15,6 @@ import { PetfinderService } from '../search/petfinder.service';
   declarations: [
     PetsComponent,
     PetIndexComponent,
-    PetNewComponent,
-    PetEditComponent,
     PetShowComponent,
   ],
   providers: [

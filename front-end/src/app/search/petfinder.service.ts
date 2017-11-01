@@ -25,15 +25,7 @@ export class PetfinderService {
 
     return this.jsonp.get(url)
              .map(function(res: Response) {return res;})
-            //  .subscribe(function(res){this.apiPets = res;})
              .catch(function(error: any) {return Observable.throw(error);});
-
-    // let req = this.jsonp.get(url);
-    // req.map(function(res: Response) {return res;})
-    //    .catch(function(error: any) {return Observable.throw(error);});
-    //
-    // req.subscribe(function(res) {this.apiPets = res;});
-    // return req;
   }
 
   getPet(pet_finder_api_id) {
@@ -41,16 +33,8 @@ export class PetfinderService {
     console.log(`petfinder.service.getPet(): api id ${pet_finder_api_id}`);
     return this.jsonp.get(url)
              .map(function(res: Response) {return res;})
-            //  .subscribe(function(res) {this.apiPets.push(res);})
              .catch(function(error: any) {return Observable.throw(error);
              });
-
-    // let req = this.jsonp.get(url);
-    // req.map(function(res: Response) {return res;})
-    //    .catch(function(error: any) {return Observable.throw(error);});
-    //
-    // req.subscribe((res) => {this.apiPets.push(res);});
-    // return req;
   }
 
   constructor(private http: Http,

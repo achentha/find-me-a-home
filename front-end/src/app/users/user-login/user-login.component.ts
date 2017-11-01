@@ -19,17 +19,6 @@ export class UserLoginComponent implements OnInit {
 
   }
 
-  // saveUser(newUser) {
-  // 	console.log("saving user");
-  // 	console.log(newUser);
-  // 	this.usersService.saveUser(newUser)
-  // 			.subscribe(response => {
-	// 		console.log(response.json());
-	// 		let user = response.json();
-	// 		window.location.href = "/users/" + user._id;
-	// 	});
-  // }
-
   loginUser(login_user) {
     console.log(`loginUser() ${login_user}`);
     this.usersService.loginUser(login_user)
