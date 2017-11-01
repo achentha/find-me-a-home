@@ -1,0 +1,19 @@
+.link-class {
+  text-decoration: none;
+  float: right;
+  margin-left: 15px;
+  margin-right: 5px;
+}
+
+.pet-display {
+  border-radius: 15px;
+  margin-top: 15px;
+  padding: 10px 5px;
+  border: 2px transparent;
+  background-color: #e6fff2;
+}
+
+img {
+  border-radius: 10px;
+  margin-left: 5px;
+}

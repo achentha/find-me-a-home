@@ -1,0 +1,18 @@
+.form-class {
+  text-align: right;
+  margin-right: 40vw;
+  margin-top: 50px;
+}
+
+.form-input {
+  margin-top: 10px;
+}
+
+img{
+  float: right;
+  /*position: fixed;
+  right: 10;
+  top: 30;*/
+  margin-bottom: 20px;
+  border-radius: 15px;
+}

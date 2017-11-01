@@ -1,15 +1,17 @@
-<p>
-  user-login works!
-</p>
+<h2>User Login</h2>
 
-<h2>Login User</h2>
+<form class="form-class" (ngSubmit)="loginUser(login_user)">
+  <div class="form-input">
+    <label for="email">email:</label>
+    <input name="email" [(ngModel)]="login_user.email">
+  </div>
 
-<form (ngSubmit)="loginUser(login_user)">
-  <label for="email">email:</label>
-  <input name="email" [(ngModel)]="login_user.email">
+  <div class="form-input">
+    <label for="password">Password:</label>
+    <input type="password" name="password" [(ngModel)]="login_user.password">
+  </div>
 
-  <label for="password">Password:</label>
-  <input name="password" [(ngModel)]="login_user.password">
-
-  <input type="submit" value="Login">
+  <input class="form-input"type="submit" value="Login">
 </form>
+
+<img src="../../assets/dog4.jpeg" alt="dog image"/>

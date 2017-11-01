@@ -1,7 +1,5 @@
-<p>
-  pet-index works!
-</p>
-<a routerLink="/users/{{userId}}"><button>My Page</button></a>
+<a class="link-class" routerLink="/users/{{userId}}">My Page</a>
+<a class="link-class" routerLink="/users/{{userId}}/pets">My Pets</a>
 
 <h3>My Pet List</h3>
   <h4 class="pet-display" *ngIf="!apiPets.length">
@@ -10,8 +8,8 @@
   <div *ngIf="apiPets.length">
     <div *ngFor="let pet of apiPets">
 
-      <div *ngIf="pet.header.status.code.$t == 100">
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Name: {{pet.pet.name.$t}},
+      <div class="pet-display" *ngIf="pet.header.status.code.$t == 100">
+        <p>Name: {{pet.pet.name.$t}},
           &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.pet.breeds.breed.$t}},
           &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.pet.age.$t}},
           &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.pet.sex.$t}}
@@ -26,11 +24,11 @@
           </span>
         </span>
 
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.pet.description.$t}}</p>
+        <p>Description: {{pet.pet.description.$t}}</p>
       </div>
 
       <div *ngIf="pet.header.status.code.$t == 201">
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;Name: {{pet.name}} is no longer available.
+        <p>Name: {{pet.name}} is no longer available.
           <span class="delete-pet"><button (click)='deleteOneUserPet(pet)'>Delete</button></span></p>
       </div>
 

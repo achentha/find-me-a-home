@@ -5,13 +5,13 @@
   </h2>
 </div>
 
-<form (ngSubmit)="findBreeds(pet_type)">
+<form class="form-class" (ngSubmit)="findBreeds(pet_type)">
   <input type="submit" value="Search Breeds">
   <label for="pet_type">Pet Type:</label>
   <input name="pet_type" [(ngModel)]="pet_type">
 </form>
 
-<form (ngSubmit)="findPetsOfBreed(breedSearch)">
+<form class="form-class" (ngSubmit)="findPetsOfBreed(breedSearch)">
   <input type="submit" value="Search Pets by Breed">
   <label for="breed">breed:</label>
   <input name="breed" [(ngModel)]="breedSearch.breed">
@@ -19,12 +19,12 @@
   <input name="location" [(ngModel)]="breedSearch.location">
 </form>
 
-<form (ngSubmit)="findPet(pet_finder_api_id)">
+<!-- for debugging -->
+<!-- <form class="form-class" (ngSubmit)="findPet(pet_finder_api_id)">
   <input type="submit" value="Search Specific Pet">
   <label for="pet_finder_api_id">Pet id:</label>
   <input name="pet_finder_api_id" [(ngModel)]="pet_finder_api_id">
-</form>
-
+</form> -->
 
 <h3 *ngIf="foundBreeds && foundBreeds.length">Found Breeds:</h3>
 <div *ngFor="let breed of foundBreeds">
@@ -32,14 +32,13 @@
 </div>
 
 <h3 *ngIf="foundPetsOfBreed.length">
-  Search Pets Result:</h3>
+  Search Result:</h3>
 <div class="pet-display" *ngFor="let pet of foundPetsOfBreed">
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;Name: {{pet.name.$t}},
+  <p>Name: {{pet.name.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.breeds.breed.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.age.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.sex.$t}}
     <span class="add-pet"><button (click)='addPet(pet)'>Add to My List</button></span>
-
 		<a routerLink="/users/{{oneUser._id}}/pets/{{pet.id.$t}}"><button>See More</button></a>
 
   <div *ngIf="pet && pet.media && pet.media.photos && pet.media.photos.photo && pet.media.photos.photo.length">
@@ -50,7 +49,7 @@
 	  </span>
 	</div>
 
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.description.$t}}</p>
+  <p>Description: {{pet.description.$t}}</p>
 </div>
 
 <router-outlet></router-outlet>

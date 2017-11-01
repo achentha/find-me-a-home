@@ -1,0 +1,21 @@
+h2 {
+  text-align: center;
+}
+
+.form-class {
+  text-align: right;
+  margin-right: 40vw;
+  margin-top: 50px;
+}
+
+.form-input {
+  margin-top: 10px;
+}
+
+img{
+  position: fixed;
+  left: 10;
+  bottom: 0;
+  margin-bottom: 20px;
+  border-radius: 15px;
+}

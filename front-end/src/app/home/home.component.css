@@ -1,0 +1,14 @@
+h2 {
+  text-align: center;
+}
+
+.home-image {
+  align: center;
+  max-width: 80vw;
+}
+
+img{
+  display: block;
+  margin: auto;
+  border-radius: 15px;
+}
