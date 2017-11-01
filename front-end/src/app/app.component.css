@@ -1,5 +1,8 @@
 header {
   background-color: #06f;
+  border-radius: 20px;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 header h1 {
@@ -48,5 +51,4 @@ footer {
   right: 0;
   bottom: 0;
   margin-right: 10px;
-
 }

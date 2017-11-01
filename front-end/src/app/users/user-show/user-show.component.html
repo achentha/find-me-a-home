@@ -34,7 +34,7 @@
 <h3 *ngIf="foundPetsOfBreed.length">
   Search Result:</h3>
 <div class="pet-display" *ngFor="let pet of foundPetsOfBreed">
-  <p>Name: {{pet.name.$t}},
+  <p><strong>Name:</strong> {{pet.name.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.breeds.breed.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.age.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.sex.$t}}
@@ -49,7 +49,7 @@
 	  </span>
 	</div>
 
-  <p>Description: {{pet.description.$t}}</p>
+  <p><strong>Description:</strong> {{pet.description.$t}}</p>
 </div>
 
 <router-outlet></router-outlet>

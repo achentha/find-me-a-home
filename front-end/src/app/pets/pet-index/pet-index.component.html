@@ -9,7 +9,7 @@
   <div *ngFor="let pet of apiPets">
 
     <div class="pet-display" *ngIf="pet.header.status.code.$t == 100">
-      <p>Name: {{pet.pet.name.$t}},
+      <p><strong>Name:</strong> {{pet.pet.name.$t}},
         &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.pet.breeds.breed.$t}},
         &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.pet.age.$t}},
         &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.pet.sex.$t}}
@@ -24,11 +24,11 @@
         </span>
       </span>
 
-      <p>Description: {{pet.pet.description.$t}}</p>
+      <p><strong>Description:</strong> {{pet.pet.description.$t}}</p>
     </div>
 
     <div *ngIf="pet.header.status.code.$t == 201">
-      <p>Name: {{pet.name}} is no longer available.
+      <p><strong>Name:</strong> {{pet.name}} is no longer available.
         <span class="delete-pet"><button (click)='deleteOneUserPet(pet)'>Delete</button></span></p>
     </div>
 

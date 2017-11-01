@@ -1,4 +1,4 @@
-.add-pet .delete-pet{
+.delete-pet{
   float: right;
 }
 
@@ -9,6 +9,29 @@
   margin-right: 5px;
 }
 
-* {
+.one-pet {
+  clear: right;
   background-color: #f9ecf2;
+  border-radius: 15px;
+  padding: 10px;
 }
+
+.div-img {
+  text-align: center;
+}
+
+img {
+  border-radius: 10px;
+  margin: 10px auto;
+}
+
+.one-comment {
+  max-width: 50%;
+  border-radius: 10px;
+  background-color: white;
+  margin-left: 10%;
+  /*text-align: center;*/
+}
+/** {
+  border: 1px solid black;
+}*/
