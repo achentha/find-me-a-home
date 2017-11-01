@@ -1,14 +1,14 @@
-<p>
-  user-index works!
-</p>
-<h2>Users</h2>
+
+<h2>Some of our potential pet adopters</h2>
 
 <div class="users">
   <div class="row" *ngFor="let user of allUsers">
-        <h4>
+    <ul>
+        <li class="user-list">
           <a routerLink="/users/{{user._id}}">
-            {{user.first_name}} {{user.last_name}},  id: {{user._id}}
+            {{user.first_name}} {{user.last_name}}
           </a>
-        </h4>
+        </li>
+    </ul>
   </div>
 </div>

@@ -1,44 +1,8 @@
-<!-- <p>
-  user-show works!
-</p> -->
-
-<!-- <form (ngSubmit)="findBreeds(pet_type)">
-  <div class="row">
-    <div class="col-lg-2 col-md-2 col-sm-2 ">
-      <input type="submit" value="Search Breeds">
-    </div>
-    <div class="col-lg-2 col-md-2 col-sm-2">
-      <label for="pet_type">Pet Type:</label>
-      <input name="pet_type" [(ngModel)]="pet_type">
-    </div>
-  </div>
-</form> -->
-
 <div *ngIf="oneUser">
 	<h2>Welcome back {{oneUser.first_name}} {{oneUser.last_name}}
-    <span><a class="user-nav" routerLink="/users/{{oneUser._id}}/pets">Show My Pet list</a></span>
+    <span><a class="user-nav" routerLink="/users/{{oneUser._id}}/pets">My Pets</a></span>
     <span><a class="user-nav" routerLink="/users/edit/{{oneUser._id}}">Edit Profile</a></span>
   </h2>
-
-
-
-  <!-- <h3>Pets: </h3>
-  <div *ngFor="let pet of oneUser.pets">
-    <div>
-      <h5>name: {{pet.name}}&nbsp;&nbsp;&nbsp;&nbsp;
-          breed: {{pet.breed}}
-      <button (click)='deletePet(pet)'>Delete</button></h5>
-      <img [src]="pet.image_url_small">
-    </div>
-  </div> -->
-
-  <!-- <app-pet-index></app-pet-index> -->
-  <!-- <div *ngIf="foundPet">
-    <h5>name: {{foundPet.name.$t}}</h5>
-    <h5>sex: {{foundPet.sex.$t}}</h5>
-    <h5>contact: {{foundPet.contact.phone.$t}}</h5>
-    <img ng-src="foundPet.media.photo[@size] == x"/>
-  </div> -->
 </div>
 
 <form (ngSubmit)="findBreeds(pet_type)">
@@ -61,7 +25,6 @@
   <input name="pet_finder_api_id" [(ngModel)]="pet_finder_api_id">
 </form>
 
-<!-- <button (click)='getPets()'>Show all my pets</button> -->
 
 <h3 *ngIf="foundBreeds && foundBreeds.length">Found Breeds:</h3>
 <div *ngFor="let breed of foundBreeds">
@@ -79,8 +42,6 @@
 
 		<a routerLink="/users/{{oneUser._id}}/pets/{{pet.id.$t}}"><button>See More</button></a>
 
-    <!-- <span class="show-pet"><button (click)='showPetDetail(pet)'>See More</button></span></p> -->
-
   <div *ngIf="pet && pet.media && pet.media.photos && pet.media.photos.photo && pet.media.photos.photo.length">
 	  <span *ngFor="let photo of pet.media.photos.photo">
 	    <span *ngIf="photo['@size'] === 'fpm'">
@@ -91,21 +52,5 @@
 
   <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.description.$t}}</p>
 </div>
-
-<!-- <h3 class="pet-display" *ngIf="foundUserPetList.length">
-  My Pet List</h3>
-<div *ngFor="let pet of foundUserPetList">
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;Name: {{pet.name.$t}},
-    &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.breeds.breed.$t}},
-    &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.age.$t}},
-    &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.sex.$t}}
-    <span class="delete-pet"><button (click)='deletePetViaApiId(pet)'>Delete</button></span></p>
-  <span *ngFor="let photo of pet.media.photos.photo">
-    <span *ngIf="photo['@size'] === 'fpm'">
-      <img src="{{photo.$t}}" alt="">
-    </span>
-  </span>
-  <p>&nbsp;&nbsp;&nbsp;&nbsp;Description: {{pet.description.$t}}</p>
-</div> -->
 
 <router-outlet></router-outlet>

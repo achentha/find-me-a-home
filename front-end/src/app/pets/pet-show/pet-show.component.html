@@ -1,8 +1,5 @@
-<p>
-  pet-show works!
-</p>
-<a routerLink="/users/{{userId}}"><button>My Page</button></a>
-<a routerLink="/users/{{userId}}/pets"><button>My Pets</button></a>
+<a class="link-class" routerLink="/users/{{userId}}">My Page</a>
+<a class="link-class" routerLink="/users/{{userId}}/pets">My Pets</a>
 
 
     <div *ngIf="apiPet && apiPet.header && apiPet.header.status && (apiPet.header.status.code.$t == 100)">

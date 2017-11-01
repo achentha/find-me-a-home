@@ -1,7 +1,10 @@
-* {
-  border: 1px solid black;
-}
-
 .add-pet .delete-pet{
   float: right;
+}
+
+.link-class {
+  text-decoration: none;
+  float: right;
+  margin-left: 15px;
+  margin-right: 5px;
 }

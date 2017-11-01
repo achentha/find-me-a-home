@@ -1,0 +1,7 @@
+.user-list {
+  list-style: none;
+}
+
+.user-list a {
+  text-decoration: none;
+}
