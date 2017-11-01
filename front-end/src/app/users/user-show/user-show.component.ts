@@ -13,7 +13,7 @@ import { PetfinderService } from '../../search/petfinder.service';
 export class UserShowComponent implements OnInit {
 
 	oneUser = <any>{};
-  breedSearch = {};
+  breedSearch = <any>{};
   pet_type = '';
   pet_finder_api_id;
 

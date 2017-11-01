@@ -4,6 +4,6 @@
   },
   "scripts": {
     "deploy": "cd front-end && ng build --aot -prod -op ../back-end/dist && cd ..",
-    "start": "node back-end/server.js"
+    "start": "cd back-end && node server.js"
   }
 }
