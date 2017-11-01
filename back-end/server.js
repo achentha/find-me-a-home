@@ -13,8 +13,6 @@ app.use(function(req, res, next) {
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
 
-// app.use(routes);
-
 let port = process.env.PORT || 3000;
 
 var passport = require('passport');
@@ -29,7 +27,6 @@ require('./config/passport')(passport); // pass passport for configuration
 // set up our express application
 app.use(morgan('dev')); // log every request to the console
 app.use(cookieParser()); // read cookies (needed for auth)
-// app.use(bodyParser()); // get information from html forms
 
 // required for passport
 app.use(session({ secret: 'stillaliveandkicking' })); // session secret

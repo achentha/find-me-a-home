@@ -1,51 +1,47 @@
 <a class="link-class" routerLink="/users/{{userId}}">My Page</a>
 <a class="link-class" routerLink="/users/{{userId}}/pets">My Pets</a>
 
+  <div *ngIf="apiPet && apiPet.header && apiPet.header.status && (apiPet.header.status.code.$t == 100)">
+    <p>Name: {{apiPet.pet.name.$t}},
+      &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{apiPet.pet.breeds.breed.$t}},
+      &nbsp;&nbsp;&nbsp;&nbsp;Age: {{apiPet.pet.age.$t}},
+      &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{apiPet.pet.sex.$t}},
+      &nbsp;&nbsp;&nbsp;&nbsp;Last Updated: {{apiPet.pet.lastUpdate.$t}}</p>
 
-    <div *ngIf="apiPet && apiPet.header && apiPet.header.status && (apiPet.header.status.code.$t == 100)">
-      <p>Name: {{apiPet.pet.name.$t}},
-        &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{apiPet.pet.breeds.breed.$t}},
-        &nbsp;&nbsp;&nbsp;&nbsp;Age: {{apiPet.pet.age.$t}},
-        &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{apiPet.pet.sex.$t}},
-        &nbsp;&nbsp;&nbsp;&nbsp;Last Updated: {{apiPet.pet.lastUpdate.$t}}</p>
+      <p *ngIf="apiPet.pet.options.option.length">
+        <span *ngFor="let opt of apiPet.pet.options.option">
+          {{opt.$t}}</span>
+      </p>
+      <p>Contact Phone: {{apiPet.pet.contact.phone.$t}},
+         email: {{apiPet.pet.contact.email.$t}},
+         &nbsp;&nbsp;city: {{apiPet.pet.contact.city.$t}},
+         &nbsp;&nbsp;state: {{apiPet.pet.contact.state.$t}},
+         &nbsp;&nbsp;zip: {{apiPet.pet.contact.zip.$t}}</p>
 
-        <p *ngIf="apiPet.pet.options.option.length">
-          <span *ngFor="let opt of apiPet.pet.options.option">
-            {{opt.$t}}</span>
-        </p>
-        <p>Contact Phone: {{apiPet.pet.contact.phone.$t}},
-           email: {{apiPet.pet.contact.email.$t}},
-           &nbsp;&nbsp;city: {{apiPet.pet.contact.city.$t}},
-           &nbsp;&nbsp;state: {{apiPet.pet.contact.state.$t}},
-           &nbsp;&nbsp;zip: {{apiPet.pet.contact.zip.$t}}</p>
-
-      <div *ngIf="apiPet.pet.media.photos.photo.length">
-        <div *ngFor="let photo of apiPet.pet.media.photos.photo">
-          <div *ngIf="photo['@size'] === 'x'">
-            <img src="{{photo.$t}}" alt="">
-          </div>
+    <div *ngIf="apiPet.pet.media.photos.photo.length">
+      <div *ngFor="let photo of apiPet.pet.media.photos.photo">
+        <div *ngIf="photo['@size'] === 'x'">
+          <img src="{{photo.$t}}" alt="">
         </div>
       </div>
+    </div>
 
-      <p>Description: {{apiPet.pet.description.$t}}</p>
-      <!-- <span *ngIf="backendPet == '{}'" class="add-pet"><button (click)='addPet(apiPet.pet)'>Add To My List</button></span>
-      <span *ngIf="backendPet != '{}'" class="delete-pet"><button (click)='deletePet(apiPet.pet)'>Delete</button></span> -->
+    <p>Description: {{apiPet.pet.description.$t}}</p>
 
-      <div *ngIf="backendPet && backendPet.length && backendPet[0].comments.length">
-        <div *ngFor="let comment of backendPet[0].comments">
-          <p>{{comment.comment}}</p>
-        </div>
-
+    <div *ngIf="backendPet && backendPet.length && backendPet[0].comments.length">
+      <div *ngFor="let comment of backendPet[0].comments">
+        <p>{{comment.comment}}</p>
       </div>
-
-      <span class="pet-button"><button (click)='addPet(apiPet.pet)'>Add To My List</button></span>
-      <span class="pet-button"><button (click)='deletePet(apiPet.pet)'>Delete</button></span>
-      <span class="pet-button"><button (click)='addComment(apiPet.pet)'>Add Comment</button></span>
-      <!-- <a routerLink="/users/{{userId}}/pets/{{backendPet._id/comments}}/new"><button>Add Comment</button></a> -->
 
     </div>
 
-    <div *ngIf="apiPet && apiPet.header && apiPet.header.status && (apiPet.header.status.code.$t == 201)">
-      <p>Name: {{apiPet.name}} is no longer available.
-        <span class="delete-pet"><button (click)='deleteOneUserPet(apiPet)'>Delete</button></span></p>
-    </div>
+    <span class="pet-button"><button (click)='addPet(apiPet.pet)'>Add To My List</button></span>
+    <span class="pet-button"><button (click)='deletePet(apiPet.pet)'>Delete</button></span>
+    <span class="pet-button"><button (click)='addComment(apiPet.pet)'>Add Comment</button></span>
+
+  </div>
+
+  <div *ngIf="apiPet && apiPet.header && apiPet.header.status && (apiPet.header.status.code.$t == 201)">
+    <p>Name: {{apiPet.name}} is no longer available.
+      <span class="delete-pet"><button (click)='deleteOneUserPet(apiPet)'>Delete</button></span></p>
+  </div>

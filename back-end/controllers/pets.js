@@ -78,10 +78,7 @@ function destroyByApiId(req, res) {
   User.findById(req.params.user_id, function(err, user) {
     if (err) {res.sendStatus(404); return;}
     console.log(`pet destroyByApiId(): user id ${user._id}, req.params.pet_api_id ${req.params.pet_api_id}`);
-    // let selectedPet = user.pets.find(pet => {
-    //   return pet.pet_finder_api_id == req.params.pet_api_id;
-    // });
-    // console.log(`pet to be deleted by api id: pet._id ${selectedPet._id}, pet name ${selectedPet.name}`);
+
     user.pets = user.pets.filter(pet => {
       return pet.pet_finder_api_id != req.params.pet_api_id;
     });
@@ -96,10 +93,7 @@ function findByApiId(req, res) {
   User.findById(req.params.user_id, function(err, user) {
     if (err) {res.sendStatus(404); return;}
     console.log(`pet findByApiId(): user id ${user._id}, req.params.pet_api_id ${req.params.pet_api_id}`);
-    // let selectedPet = user.pets.find(pet => {
-    //   return pet.pet_finder_api_id == req.params.pet_api_id;
-    // });
-    // console.log(`pet to be deleted by api id: pet._id ${selectedPet._id}, pet name ${selectedPet.name}`);
+
     let foundPet = user.pets.filter(pet => {
       return pet.pet_finder_api_id == req.params.pet_api_id;
     });

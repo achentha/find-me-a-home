@@ -2,35 +2,35 @@
 <a class="link-class" routerLink="/users/{{userId}}/pets">My Pets</a>
 
 <h3>My Pet List</h3>
-  <h4 class="pet-display" *ngIf="!apiPets.length">
-    You currently have no pet.</h4>
+<h4 class="pet-display" *ngIf="!apiPets.length">
+  You currently have no pet.</h4>
 
-  <div *ngIf="apiPets.length">
-    <div *ngFor="let pet of apiPets">
+<div *ngIf="apiPets.length">
+  <div *ngFor="let pet of apiPets">
 
-      <div class="pet-display" *ngIf="pet.header.status.code.$t == 100">
-        <p>Name: {{pet.pet.name.$t}},
-          &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.pet.breeds.breed.$t}},
-          &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.pet.age.$t}},
-          &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.pet.sex.$t}}
-          <a routerLink="/users/{{userId}}/pets/{{pet.pet.id.$t}}"><button>See More</button></a>
-          <span class="delete-pet"><button (click)='deleteOneUserPet(pet)'>Delete</button></span></p>
+    <div class="pet-display" *ngIf="pet.header.status.code.$t == 100">
+      <p>Name: {{pet.pet.name.$t}},
+        &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.pet.breeds.breed.$t}},
+        &nbsp;&nbsp;&nbsp;&nbsp;Age: {{pet.pet.age.$t}},
+        &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{pet.pet.sex.$t}}
+        <a routerLink="/users/{{userId}}/pets/{{pet.pet.id.$t}}"><button>See More</button></a>
+        <span class="delete-pet"><button (click)='deleteOneUserPet(pet)'>Delete</button></span></p>
 
-        <span *ngIf="pet.pet.media.photos.photo.length">
-          <span *ngFor="let photo of pet.pet.media.photos.photo">
-            <span *ngIf="photo['@size'] === 'fpm'">
-              <img src="{{photo.$t}}" alt="">
-            </span>
+      <span *ngIf="pet.pet.media.photos.photo.length">
+        <span *ngFor="let photo of pet.pet.media.photos.photo">
+          <span *ngIf="photo['@size'] === 'fpm'">
+            <img src="{{photo.$t}}" alt="">
           </span>
         </span>
+      </span>
 
-        <p>Description: {{pet.pet.description.$t}}</p>
-      </div>
-
-      <div *ngIf="pet.header.status.code.$t == 201">
-        <p>Name: {{pet.name}} is no longer available.
-          <span class="delete-pet"><button (click)='deleteOneUserPet(pet)'>Delete</button></span></p>
-      </div>
-
+      <p>Description: {{pet.pet.description.$t}}</p>
     </div>
+
+    <div *ngIf="pet.header.status.code.$t == 201">
+      <p>Name: {{pet.name}} is no longer available.
+        <span class="delete-pet"><button (click)='deleteOneUserPet(pet)'>Delete</button></span></p>
+    </div>
+
   </div>
+</div>

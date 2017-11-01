@@ -13,7 +13,6 @@ var UserSchema = new Schema({
 	last_name: String,
   city: String,
   state: String,
-  // user_name: String,
   pets: [PetSchema],
 });
 

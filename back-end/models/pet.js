@@ -6,10 +6,7 @@ var mongoose = require('mongoose'),
 var PetSchema = new Schema({
 	name: String,
   breed: String,
-  // description: String,
   pet_finder_api_id: Number,
-  // image_url_small: String,
-  // image_url_large: String,
   comments: [CommentSchema],
 });
 

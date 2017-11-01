@@ -88,7 +88,6 @@ module.exports = function(app, passport) {
     app.get('/users/:user_id/pets/petfinderapi/:pet_api_id', controllers.pets.findByApiId);
     app.delete('/users/:user_id/pets/petfinderapi/:pet_api_id', controllers.pets.destroyByApiId);
 
-
     //users routes
     app.get('/users', controllers.users.index);
     app.post('/users', controllers.users.create);
