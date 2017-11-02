@@ -27,7 +27,7 @@ export class PetsService {
 	}
 
 	deletePetViaApiId(userId, apiPet) {
-		// console.log(`deletePetViaApiId for user id ${user._id} pet api id ${apiPet.id.$t}`);
+		console.log(`deletePetViaApiId for user id ${userId} apiPet ${apiPet}`);
 		return this.http.delete(`${this.baseUrl}/users/${userId}/pets/petfinderapi/${apiPet.id.$t}`);
 	}
 
