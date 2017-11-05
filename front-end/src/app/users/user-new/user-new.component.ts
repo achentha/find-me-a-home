@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-new',
@@ -12,7 +13,8 @@ export class UserNewComponent implements OnInit {
 	newUser = <any>{};
 
   constructor(
-  	private usersService : UsersService
+  	private usersService : UsersService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -26,7 +28,8 @@ export class UserNewComponent implements OnInit {
         .subscribe(response => {
       console.log(response.json());
       let user = response.json();
-      window.location.href = "/users/" + user._id;
+      console.log('redirect_url', user["redirect_url"]);
+      this.router.navigateByUrl(user["redirect_url"]);
     });
   }
 

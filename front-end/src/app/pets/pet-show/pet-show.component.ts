@@ -71,7 +71,6 @@ export class PetShowComponent implements OnInit {
           console.log(this.apiPet);
           this.petsService.findPetViaApiId(this.userId, this.apiPet.pet)
           .subscribe(response => {
-            console.log(response.json());
             this.backendPet = response.json();
             console.log(this.backendPet);
           });

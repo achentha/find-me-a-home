@@ -19,7 +19,7 @@
   <input name="location" [(ngModel)]="breedSearch.location">
 </form>
 
-<!-- for debugging -->
+<!-- keep for debugging and to hit the api for a specific pet -->
 <!-- <form class="form-class" (ngSubmit)="findPet(pet_finder_api_id)">
   <input type="submit" value="Search Specific Pet">
   <label for="pet_finder_api_id">Pet id:</label>
@@ -31,7 +31,7 @@
   &nbsp;&nbsp;&nbsp;&nbsp;{{breed.$t}}
 </div>
 
-<h3 *ngIf="foundPetsOfBreed.length">
+<h3 *ngIf="foundPetsOfBreed && foundPetsOfBreed.length">
   Search Result:</h3>
 <div class="pet-display" *ngFor="let pet of foundPetsOfBreed">
   <p><strong>Name:</strong> {{pet.name.$t}},

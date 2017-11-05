@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-
+import { environment } from '../../environments/environment'
 @Injectable()
 export class UsersService {
 
-	baseUrl = 'http://localhost:3000';
+	// baseUrl = 'http://localhost:3000';
+  baseUrl = environment.production ?
+		"https://infinite-woodland-85165.herokuapp.com/" :
+		"http://localhost:3000";
 
 	getAllUsers() {
 		return this.http.get(`${this.baseUrl}/users`);
@@ -32,6 +35,10 @@ export class UsersService {
 	loginUser(user) {
 		return this.http.post(`${this.baseUrl}/login`, user);
 	}
+
+  logoutUser(user) {
+    return this.http.get(`${this.baseUrl}/logout`)
+  }
 
 	updateUser(updatedUser) {
 		return this.http.put(`${this.baseUrl}/users/${updatedUser._id}`, updatedUser);
