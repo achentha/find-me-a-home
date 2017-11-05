@@ -61,13 +61,19 @@ for (let i = 0; i < userList.length; i++) {
   userList[i].pets.push(petList[i]);
 }
 
+// db.User.remove({}, function(err, users){
+//
+//   db.User.create(userList, function(err, users){
+//     if (err) { return console.log('ERROR', err); }
+//     console.log("all users:", users);
+//     console.log("created", users.length, "users");
+//     process.exit();
+//   });
+//
+// });
+
 db.User.remove({}, function(err, users){
-
-  db.User.create(userList, function(err, users){
-    if (err) { return console.log('ERROR', err); }
-    console.log("all users:", users);
-    console.log("created", users.length, "users");
-    process.exit();
-  });
-
+  console.log("remove all users:", users);
+  if (err) {return console.log('ERROR', err);}
+  process.exit();
 });
