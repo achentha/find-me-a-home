@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-login',
@@ -12,7 +13,8 @@ export class UserLoginComponent implements OnInit {
 	login_user = <any>{};
 
   constructor(
-  	private usersService : UsersService
+  	private usersService : UsersService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -20,12 +22,13 @@ export class UserLoginComponent implements OnInit {
   }
 
   loginUser(login_user) {
-    console.log(`loginUser() ${login_user}`);
+    console.log('loginUser(): login_user', login_user);
     this.usersService.loginUser(login_user)
         .subscribe(response => {
-      console.log(response.json());
+      console.log('loginUser(): response', response);
       let user = response.json();
-      window.location.href = "/users/" + user._id;
+      console.log('redirect_url', user["redirect_url"]);
+      this.router.navigateByUrl(user["redirect_url"]);
     });
   }
 

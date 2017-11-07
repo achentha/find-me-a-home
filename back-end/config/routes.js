@@ -20,11 +20,16 @@ module.exports = function(app, passport) {
   //     res.render('index.ejs'); // load the index.ejs file
   // });
 
-  app.post('/login', passport.authenticate('local-login', {
-    successRedirect : '/profile', // redirect to the secure profile section
-    failureRedirect : '/login', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-  }));
+  app.post('/login', passport.authenticate('local-login'), function(req, res) {
+    console.log('/login:');
+    req.login(req.user, function(err, res2) {
+      if (err) {res.sendStatus(404); return;}
+      console.log('res: ', res);
+      console.log('req: ', req);
+      console.log(`returning /users/${req.user.id}`);
+      res.json({redirect_url: `/users/${req.user.id}`});
+    })
+  });
 
   app.post('/signup', passport.authenticate('local-signup'), function(req, res) {
     console.log('signing up MMM');
