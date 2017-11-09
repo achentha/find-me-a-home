@@ -9,7 +9,7 @@ export class UsersService {
 
 	// baseUrl = 'http://localhost:3000';
   baseUrl = environment.production ?
-		"https://infinite-woodland-85165.herokuapp.com/" :
+		"https://infinite-woodland-85165.herokuapp.com" :
 		"http://localhost:3000";
 
   isLoggedIn: Subject<boolean> = new Subject();
