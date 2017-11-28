@@ -10,7 +10,7 @@
     &nbsp;&nbsp;&nbsp;&nbsp;Sex: {{apiPet.pet.sex.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Last Updated: {{apiPet.pet.lastUpdate.$t}}</p>
 
-    <p *ngIf="apiPet.pet.options.option.length">
+    <p *ngIf="apiPet.pet && apiPet.pet.options && apiPet.pet.options.option && apiPet.pet.options.option.length">
       <span *ngFor="let opt of apiPet.pet.options.option">
         {{opt.$t}}</span>
     </p>
@@ -20,7 +20,7 @@
        &nbsp;&nbsp;state: {{apiPet.pet.contact.state.$t}},
        &nbsp;&nbsp;zip: {{apiPet.pet.contact.zip.$t}}</p>
 
-  <div class="div-img" *ngIf="apiPet.pet.media.photos.photo.length">
+  <div class="div-img" *ngIf="apiPet.pet && apiPet.pet.media && apiPet.pet.media.photos && apiPet.pet.media.photos.photo && apiPet.pet.media.photos.photo.length">
     <div *ngFor="let photo of apiPet.pet.media.photos.photo">
       <div *ngIf="photo['@size'] === 'x'">
         <img src="{{photo.$t}}" alt="">
