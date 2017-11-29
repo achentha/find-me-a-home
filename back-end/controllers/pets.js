@@ -4,7 +4,7 @@ var User = db.User;
 
 function index(req, res) {
   User.findById(req.params.user_id, function(err, user) {
-    if (err) {res.sendStatus(404); return;}
+    if (err || !user.pets) {res.sendStatus(404); return;}
     res.json(user.pets);
   });
 }
