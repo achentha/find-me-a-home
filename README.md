@@ -22,7 +22,7 @@ Pet search. From the user page:
 ### Search dogs according to a selected breed
 * Enter one of the breed displayed from the above step in the 'breed' box.
 * Enter the location for search. It can be the zip code, or city,state (e.g. Fremont, CA). Then click 'Search Pets by breed' button. It will display all available dogs in the nearby location.
-Step 3. For each of the display dogs, click on 'Add to My List' button to add the dog in your list.
+* For each of the display dogs, click on 'Add to My List' button to add the dog in your list.
 
 ## Acknowledgement/Credit
 * Thanks to petfinder API which provides the access to their API to retrieve the information on the animals/shelters
