@@ -51,7 +51,7 @@ app.get('/*', function(req, res) {
 });
 
 app.use(function(req, res, next) {
-  console.log("got a request", req.method, req.url);
+  console.log("\n\n\ngot a request", req.method, req.url);
   next();
 })
 

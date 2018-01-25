@@ -21,12 +21,12 @@ module.exports = function(app, passport) {
   // });
 
   app.post('/login', passport.authenticate('local-login'), function(req, res) {
-    console.log('/login:');
+    console.log('\n\n\n/login:');
     req.login(req.user, function(err, res2) {
       if (err) {res.sendStatus(404); return;}
-      console.log('res: ', res);
-      console.log('req: ', req);
-      console.log(`returning /users/${req.user.id}`);
+      //console.log('\n\n\nres: ', res);
+      //console.log('\n\n\nreq: ', req);
+      console.log(`\n\n\nreturning /users/${req.user.id}`);
       res.json({redirect_url: `/users/${req.user.id}`});
     })
   });
@@ -55,8 +55,10 @@ module.exports = function(app, passport) {
   // LOGOUT ==============================
   // =====================================
   app.get('/logout', function(req, res) {
+    console.log('\n\n\nlogout: ', req);
     req.logout();
-    res.redirect('/');
+    console.log('\n\n\ndone logout');
+    res.json({redirect_url: '/'});
   });
 
   //comments routes

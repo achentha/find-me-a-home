@@ -15,7 +15,8 @@ export class AppComponent implements OnInit {
   logout() {
     let req = this.usersService.logoutUser();
     req.subscribe(res => {
-      this.router.navigateByUrl("/");
+      let redirect = res.json();
+      this.router.navigateByUrl(redirect["redirect_url"]);
     });
   }
 
