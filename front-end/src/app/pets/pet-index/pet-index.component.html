@@ -26,8 +26,13 @@
       <p><strong>Description:</strong> {{pet.pet.description.$t}}</p>
     </div>
 
-    <div *ngIf="pet.header.status.code.$t == 201">
-      <p><strong>Name:</strong> {{pet.name}} is no longer available.
+    <div class="pet-display" *ngIf="pet.header.status.code.$t == 201">
+      <p><strong>Name:</strong> {{pet.name}} <span style="color:red;">is no longer available</span>
+        <span class="delete-pet"><button (click)='deleteOneUserPet(pet)'>Delete</button></span></p>
+    </div>
+
+    <div class="pet-display" *ngIf="pet.header.status.code.$t == 300">
+      <p><strong>Name:</strong> {{pet.name}} <span style="color:red;">message: {{pet.header.status.message.$t}}</span>
         <span class="delete-pet"><button (click)='deleteOneUserPet(pet)'>Delete</button></span></p>
     </div>
 

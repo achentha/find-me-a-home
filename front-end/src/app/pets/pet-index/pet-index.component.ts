@@ -36,6 +36,7 @@ export class PetIndexComponent implements OnInit {
             this.apiPet['_id'] = pet._id;
 
             this.apiPets.push(this.apiPet);
+            console.log('apiPets', this.apiPets);
           });
       });
     });
