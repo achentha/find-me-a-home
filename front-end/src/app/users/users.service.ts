@@ -38,11 +38,7 @@ export class UsersService {
 	}
 
 	signupUser(newUser) {
-    let req = this.http.post(`${this.baseUrl}/signup`, newUser);
-    req.subscribe(resp => this.updateLogin(true),
-                  err => this.updateLogin(false));
-    return req;
-		// return this.http.post(`${this.baseUrl}/signup`, newUser);
+    return this.http.post(`${this.baseUrl}/signup`, newUser);
 	}
 
 	loginUser(user) {

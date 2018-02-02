@@ -9,7 +9,7 @@ var routes = require('./config/routes.js');
 
 //CORS setup to allow other ports from this host
 //Only needed if not on Heroku/prod
- if(!process.env.DYNO) {
+if(!process.env.DYNO) {
   app.use(function(req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");

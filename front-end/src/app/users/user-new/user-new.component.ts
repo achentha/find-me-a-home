@@ -25,12 +25,15 @@ export class UserNewComponent implements OnInit {
     console.log("create user");
     console.log(newUser);
     this.usersService.signupUser(newUser)
-        .subscribe(response => {
-      console.log(response.json());
-      let user = response.json();
-      console.log('redirect_url', user["redirect_url"]);
-      this.router.navigateByUrl(user["redirect_url"]);
-    });
+        .subscribe(
+          response => {
+            this.usersService.updateLogin(true);
+            console.log(response.json());
+            let jsonRes = response.json();
+            console.log('redirect_url', jsonRes["redirect_url"]);
+            this.router.navigateByUrl(jsonRes["redirect_url"])
+          },
+          err => this.usersService.updateLogin(false)
+        );
   }
-
 }
