@@ -1,19 +1,10 @@
 h2 {
   text-align: center;
-}
-
-.form-class {
-  text-align: right;
-  margin-right: 40vw;
-  margin-top: 50px;
-}
-
-.form-input {
-  margin-top: 10px;
-  clear: right;
+  margin: 25px auto;
 }
 
 img{
   float: right;
   border-radius: 15px;
+  background-color: #fff2e6;
 }

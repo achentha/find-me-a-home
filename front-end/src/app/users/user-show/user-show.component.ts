@@ -14,7 +14,7 @@ export class UserShowComponent implements OnInit {
 
 	oneUser = <any>{};
   breedSearch = <any>{};
-  pet_type = '';
+  pet_type = 'dog';
   pet_finder_api_id;
 
   foundBreeds = [];
@@ -35,7 +35,6 @@ export class UserShowComponent implements OnInit {
       .subscribe(response => {
         this.foundBreeds = response.json().petfinder.breeds.breed;
           console.log(this.foundBreeds);
-          this.pet_type = '';
       });
   }
 

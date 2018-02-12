@@ -1,8 +1,13 @@
+h2 {
+  text-align: center;
+  margin: 25px auto;
+}
+
 .link-class {
   text-decoration: none;
   float: right;
   margin-left: 15px;
-  margin-right: 5px;
+  margin-right: 15px;
 }
 
 .pet-display {

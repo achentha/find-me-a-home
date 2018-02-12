@@ -1,37 +1,35 @@
 <h2>New User Sign Up</h2>
 
-<form class="form-class" (ngSubmit)="createUser(newUser)">
-  <div class="form-input">
-    <label for="first_name">First Name:</label>
-    <input name="first_name" [(ngModel)]="newUser.first_name">
+<form (ngSubmit)="createUser(newUser)">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="first_name">First Name:</label>
+    <input class="col-md-5 col-sm-10" name="first_name" [(ngModel)]="newUser.first_name">
   </div>
 
-  <div class="form-input">
-    <label for="last_name">Last Name:</label>
-    <input name="last_name" [(ngModel)]="newUser.last_name">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="last_name">Last Name:</label>
+    <input class="col-md-5 col-sm-10" name="last_name" [(ngModel)]="newUser.last_name">
   </div>
 
-  <div class="form-input">
-    <label for="email">email:</label>
-    <input name="email" [(ngModel)]="newUser.email">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="city">City:</label>
+    <input class="col-md-5 col-sm-10" name="city" [(ngModel)]="newUser.city">
   </div>
 
-  <div class="form-input">
-    <label for="city">City:</label>
-    <input name="city" [(ngModel)]="newUser.city">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="state">State:</label>
+    <input class="col-md-5 col-sm-10" name="state" [(ngModel)]="newUser.state">
   </div>
 
-  <div class="form-input">
-    <label for="state">State:</label>
-    <input name="state" [(ngModel)]="newUser.state">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="email">email(login id):</label>
+    <input class="col-md-5 col-sm-10" name="email" [(ngModel)]="newUser.email">
   </div>
 
-  <div class="form-input">
-    <label for="password">Password:</label>
-    <input type="password" name="password" [(ngModel)]="newUser.password">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="password">Password:</label>
+    <input class="col-md-5 col-sm-10" type="password" name="password" [(ngModel)]="newUser.password">
   </div>
 
-  <input class="form-input" type="submit" value="Create">
+  <input class="form-group col-2 offset-5" type="submit" value="Create">
 </form>
-
-<img src="../../assets/dog3.jpeg" alt="dog image"/>

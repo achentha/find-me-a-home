@@ -1,17 +1,17 @@
 <h2>User Login</h2>
 
-<form class="form-class" (ngSubmit)="loginUser(login_user)">
-  <div class="form-input">
-    <label for="email">email:</label>
-    <input name="email" [(ngModel)]="login_user.email">
+<form (ngSubmit)="loginUser(login_user)">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="email">email:</label>
+    <input class="col-md-5 col-sm-10" name="email" [(ngModel)]="login_user.email">
   </div>
 
-  <div class="form-input">
-    <label for="password">Password:</label>
-    <input type="password" name="password" [(ngModel)]="login_user.password">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="password">Password:</label>
+    <input class="col-md-5 col-sm-10" type="password" name="password" [(ngModel)]="login_user.password">
   </div>
 
-  <input class="form-input"type="submit" value="Login">
+  <input class="form-group col-2 offset-5" type="submit" value="Login">
 </form>
 
-<img src="../../assets/dog4.jpeg" alt="dog image"/>
+<img src="../../assets/dog4.jpg" alt="dog image"/> -->

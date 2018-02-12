@@ -1,41 +1,40 @@
 <h2>Editing Profile</h2>
-<img src="../../assets/dog1.jpeg" alt="dog image"/>
 
-<form class="form-class" (ngSubmit)="updateUser(updatedUser)">
-  <div class="form-input">
-    <label for="first_name">First Name:</label>
-    <input name="first_name" [(ngModel)]="updatedUser.first_name">
+<form (ngSubmit)="updateUser(updatedUser)">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="first_name">First Name:</label>
+    <input class="col-md-5 col-sm-10" name="first_name" [(ngModel)]="updatedUser.first_name">
   </div>
 
-  <div class="form-input">
-    <label for="last_name">Last Name:</label>
-    <input name="last_name" [(ngModel)]="updatedUser.last_name">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="last_name">Last Name:</label>
+    <input class="col-md-5 col-sm-10" name="last_name" [(ngModel)]="updatedUser.last_name">
   </div>
 
-  <div class="form-input">
-    <label for="email">email:</label>
-    <input name="email" [(ngModel)]="updatedUser.email">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="email">email:</label>
+    <input class="col-md-5 col-sm-10" name="email" [(ngModel)]="updatedUser.email">
   </div>
 
-  <div class="form-input">
-    <label for="city">City:</label>
-    <input name="city" [(ngModel)]="updatedUser.city">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="city">City:</label>
+    <input class="col-md-5 col-sm-10" name="city" [(ngModel)]="updatedUser.city">
   </div>
 
-  <div class="form-input">
-    <label for="state">State:</label>
-    <input name="state" [(ngModel)]="updatedUser.state">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="state">State:</label>
+    <input class="col-md-5 col-sm-10" name="state" [(ngModel)]="updatedUser.state">
   </div>
 
-  <div class="form-input">
-    <label for="user_name">User Name:</label>
-    <input name="user_name" [(ngModel)]="updatedUser.user_name">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="user_name">User Name:</label>
+    <input class="col-md-5 col-sm-10" name="user_name" [(ngModel)]="updatedUser.user_name">
   </div>
 
-  <div class="form-input">
-    <label for="password">Password:</label>
-    <input name="password" [(ngModel)]="updatedUser.password">
+  <div class="form-group row justify-content-center">
+    <label class="col-md-2 col-sm-10" for="password">Password:</label>
+    <input class="col-md-5 col-sm-10" name="password" [(ngModel)]="updatedUser.password">
   </div>
 
-  <input class="form-input" type="submit" value="Update">
+  <input class="form-group col-2 offset-5" type="submit" value="Update">
 </form>

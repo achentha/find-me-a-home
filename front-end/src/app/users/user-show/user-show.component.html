@@ -5,19 +5,26 @@
   </h2>
 </div>
 
-<form class="form-class" (ngSubmit)="findBreeds(pet_type)">
-  <input type="submit" value="Search Breeds">
-  <label for="pet_type">Pet Type:</label>
-  <input name="pet_type" [(ngModel)]="pet_type">
+<form (ngSubmit)="findBreeds(pet_type)">
+	<div class="form-group justify-content-start offset-md-1 offset-sm-1">
+		<label class="col-md-2 col-sm-2" for="pet_type">Pet Type:</label>
+	  <input class="col-md-5 col-sm-8" name="pet_type" [(ngModel)]="pet_type">
+		<input class="col-md-3 offset-md-0 col-sm-4 offset-sm-4" type="submit" value="Search Breeds">
+	</div>
 </form>
-
-<form class="form-class" (ngSubmit)="findPetsOfBreed(breedSearch)">
-  <input type="submit" value="Search Pets by Breed">
-  <label for="breed">breed:</label>
-  <input name="breed" [(ngModel)]="breedSearch.breed">
-  <label for="location">location:</label>
-  <input name="location" [(ngModel)]="breedSearch.location">
+<hr/>
+<form (ngSubmit)="findPetsOfBreed(breedSearch)">
+  <div class="form-group justify-content-start offset-md-1 offset-sm-1">
+	  <label class="col-md-2 col-sm-2" for="breed">breed:</label>
+	  <input class="col-md-5 col-sm-8" name="breed" [(ngModel)]="breedSearch.breed">
+	</div>
+	<div class="justify-content-start offset-md-1 offset-sm-1">
+		<label class="col-md-2 col-sm-2" for="location">location:</label>
+	  <input class="col-md-5 col-sm-8" name="location" [(ngModel)]="breedSearch.location">
+		<input class="col-md-3 offset-md-0 col-sm-4 offset-sm-4" type="submit" value="Search Pets by Breed">
+	</div>
 </form>
+<hr/>
 
 <!-- keep for debugging and to hit the api for a specific pet -->
 <!-- <form class="form-class" (ngSubmit)="findPet(pet_finder_api_id)">
@@ -26,13 +33,13 @@
   <input name="pet_finder_api_id" [(ngModel)]="pet_finder_api_id">
 </form> -->
 
-<h3 *ngIf="foundBreeds && foundBreeds.length">Found Breeds:</h3>
+<h3 class="search-output" *ngIf="foundBreeds && foundBreeds.length">Found Breeds:</h3>
 <div *ngFor="let breed of foundBreeds">
   &nbsp;&nbsp;&nbsp;&nbsp;{{breed.$t}}
 </div>
 
-<h3 *ngIf="foundPetsOfBreed && foundPetsOfBreed.length">
-  Search Result:</h3>
+<h3 class="search-output" *ngIf="foundPetsOfBreed && foundPetsOfBreed.length">
+  Found Pets:</h3>
 <div class="pet-display" *ngFor="let pet of foundPetsOfBreed">
   <p><strong>Name:</strong> {{pet.name.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{pet.breeds.breed.$t}},
