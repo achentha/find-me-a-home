@@ -1,5 +1,13 @@
 h3 {
   text-align: center;
+  font-size: 3.0em;
+  color: white;
+  text-shadow: 2px 2px 1px black;
+  padding: 0px 10%;
+}
+
+.first-h3 {
+  padding-top: 400px;
 }
 
 .jumbotron {
@@ -7,7 +15,7 @@ h3 {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url('../../assets/dog5.jpg');
+  background-image: url('../../assets/dog6.jpg');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-size: cover;

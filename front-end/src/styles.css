@@ -1,5 +1,8 @@
 * {
-  font-family: 'PT Serif', serif;
+  /* font-family: 'PT Serif', serif; */
+  font-family: 'Arimo', sans-serif;
+  /* font-family: 'Roboto', sans-serif; */
+  /* font-family: 'Helvetica Neue'; */
   /* border: 1px solid black; */
 }
 
@@ -7,4 +10,8 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+}
+
+body {
+  background-color: #fff2e6;
 }

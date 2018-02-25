@@ -1,6 +1,6 @@
 h2 {
   text-align: center;
-  margin: 25px auto;
+  padding: 15px 0px;
 }
 
 .link-class {
@@ -12,8 +12,9 @@ h2 {
 
 .pet-display {
   border-radius: 15px;
-  margin-top: 15px;
-  padding: 10px 5px;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  padding-left: 5px;
   border: 2px transparent;
   background-color: #e6fff2;
 }

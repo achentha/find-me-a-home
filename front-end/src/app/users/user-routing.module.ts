@@ -16,10 +16,10 @@ const userRoutes: Routes = [
         path: 'users',
         component: UsersComponent,
         children: [ //create the sub sections (children) for this route
-            {
-                path: '',
-                component: UserIndexComponent
-            },
+            // {
+            //     path: '',
+            //     component: UserIndexComponent
+            // },
             {
                 path: 'new',
                 component: UserNewComponent

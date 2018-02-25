@@ -4,6 +4,7 @@
 </div>
 
 <div class="one-pet" *ngIf="apiPet && apiPet.header && apiPet.header.status && (apiPet.header.status.code.$t == 100)">
+  <h2>{{apiPet.pet.name.$t}}</h2>
   <p><strong>Name:</strong> {{apiPet.pet.name.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Breed: {{apiPet.pet.breeds.breed.$t}},
     &nbsp;&nbsp;&nbsp;&nbsp;Age: {{apiPet.pet.age.$t}},

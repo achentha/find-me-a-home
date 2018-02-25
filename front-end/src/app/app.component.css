@@ -1,15 +1,11 @@
-body {
-  background-color: #fff2e6;
-}
-
 main {
   height: 100%;
-  widt: 100vw;
+  width: 100vw;
 }
 
 header {
-  background-color: #a3c2c2;
   padding: 15px;
+  background-color: #a3c2c2;
 }
 
 header nav {
@@ -21,7 +17,6 @@ header nav ul {
   height: 30px;
   width: 100%;
   line-height: 30px;
-  /* padding: 0; */
 }
 
 header nav ul li {
