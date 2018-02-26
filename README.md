@@ -19,8 +19,12 @@ Welcome to the 'Find Me a Home' App. It was created to help potential pet adopte
 ### 1. Sign Up
 * From the home page, click on the 'Sign Up' link on the top right
 <img src="images/Home.png">
+
+###
 * This bring you to the page with the Sign Up form
 <img src="images/SignUp.png">
+
+###
 * Once you sign up, you will be logged in
 
 ### 2. Log in
@@ -40,13 +44,19 @@ Welcome to the 'Find Me a Home' App. It was created to help potential pet adopte
 * Enter the zip code in the 'location' input
 * Press the 'Search Pets by Breed' button
 <img src="images/PetSearch.png">
+
+####
 * This yields all the available dogs of the specified breed from all the shelters in the nearby location
 <img src="images/PetSearchResult.png">
+
+####
 * From the pet list above, the user can select and add pets to his/her own list by clicking the 'Add to My List' button next to each dog
 
 #### 3.3 Display all pets in the user's list
 * From the pet list page above, click on the 'My Pets' link on the top right
 <img src="images/PetSearch2MyPets.png">
+
+####
 * This yields all the pets the user has saved in his/her list
 <img src="images/MyPets.png">
 
@@ -60,8 +70,9 @@ Welcome to the 'Find Me a Home' App. It was created to help potential pet adopte
 * Click on the "Add Comment" button
 * Enter comment in the input box and press the 'Create Comment' button
 * This yields a simple form to input comment
-
 <img src="images/AddCommentToPet.png">
+
+###
 * Now you can see the added comment at the bottom of the detail page of each pet
 * You can enter as many comment entries as you want for each pet
 
