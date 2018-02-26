@@ -15,6 +15,12 @@ Welcome to the 'Find Me a Home' App. It was created to help potential pet adopte
 * Passport for user login/signup authentication
 * Bcrypt for password encryption
 
+## Installation Instructions
+* git clone https://github.com/achentha/find-me-a-home.git
+* cd find-me-a-home
+* npm install
+* npm start
+
 ## User Instructions
 ### 1. Sign Up
 * From the home page, click on the 'Sign Up' link on the top right
