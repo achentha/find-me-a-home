@@ -33,13 +33,13 @@ Welcome to the 'Find Me a Home' App. It was created to help potential pet adopte
 * Enter 'dog' in the 'Pet Type' input box
 * Press 'Search Breeds' button
 * This yields the list of all the 'Found Breeds'
-<img src="images/BreedSearch.png">
+<img src="images/BreedSearchxxx.png">
 
 #### 3.2 Search all available dogs for a specify breed
 * Select one of 'Found Breeds' and enter it it the 'breed' input
 * Enter the zip code in the 'location' input
 * Press the 'Search Pets by Breed' button
-<img src="images/PetSearch.png">
+<img src="images/PetSearchxxx.png">
 * This yields all the available dogs of the specified breed from all the shelters in the nearby location
 <img src="images/PetSearchResult.png">
 
