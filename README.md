@@ -1,4 +1,6 @@
 ## Find Me a Home
+<img src="images/Home.png">
+
 Welcome to the 'Find Me a Home' App. It was created to help potential pet adopter to find a pet from animal shelters. The user can sign up/log in, then have the ability to do the following:
 * search for breeds of animal by enter animal type(e.g. 'dog')
 * search for all animals of the specified breed and location(e.g.'German Shepherd Dog' & 'zip code)
