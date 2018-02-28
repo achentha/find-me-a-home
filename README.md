@@ -22,6 +22,7 @@ Welcome to the 'Find Me a Home' App. It was created to help potential pet adopte
 * cd find-me-a-home
 * npm install
 * npm start
+* open your browser with the following url - localhost:4200
 
 ## User Instructions
 ### 1. Sign Up
