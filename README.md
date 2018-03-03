@@ -17,6 +17,11 @@ Welcome to the 'Find Me a Home' App. It was created to help potential pet adopte
 * Passport for user login/signup authentication
 * Bcrypt for password encryption
 
+## Deployment on Heroku
+* Here is the link to heroku: https://infinite-woodland-85165.herokuapp.com/
+* The petfinder API uses 'http:' , not 'https:' . Heroku does not like this and refuses to execute the API request. Thus the app can not work on heroku.
+* The only way to run this is to clone this repository and run it locally. You can follow the 'Installation Instructions' and 'User Instructions' below to have it run on your local computer.
+
 ## Installation Instructions
 * git clone https://github.com/achentha/find-me-a-home.git
 * cd find-me-a-home
