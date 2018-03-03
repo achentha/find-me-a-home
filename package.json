@@ -4,7 +4,7 @@
   },
   "scripts": {
     "deploy": "cd front-end && ng build --aot -prod -op ../back-end/dist && cd ..",
-    "start": "concurrently \"mongod\" \"cd back-end && nodemon\" \"cd front-end && ng serve\"",
+    "start": "concurrently \"cd back-end && nodemon\" \"cd front-end && ng serve\"",
     "postinstall": "cd back-end && npm install && cd ../front-end && npm install"
   }
 }
