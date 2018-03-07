@@ -15,7 +15,6 @@ Welcome to the 'Find Me a Home' App. It was created to help potential pet adopte
 * Express/Node JS for back-end
 * Mongo/Mongoose for DB
 * Passport for user login/signup authentication
-* Bcrypt for password encryption
 
 ## Deployment on Heroku
 * Here is the link to heroku: https://infinite-woodland-85165.herokuapp.com/
